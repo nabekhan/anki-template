@@ -2,6 +2,8 @@
 
 This repository contains all the Anki templates I made. For the directly usable version, please download it from the [release](https://github.com/ikkz/anki-templet/releases).
 
+For suggestions and feedback, please submit them [here](https://github.com/ikkz/anki-templet/issues).
+
 # Templates
 
 ## Multiple Choice
