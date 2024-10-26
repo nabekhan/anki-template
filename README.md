@@ -1,8 +1,8 @@
 # Anki Templates
 
-This repository contains all the Anki templates I made. For the directly usable version, please download it from the [release](https://github.com/ikkz/anki-templet/releases).
+This repository contains all the Anki templates I made. For the directly usable version, please download it from the [release](https://github.com/ikkz/anki-template/releases).
 
-For suggestions and feedback, please submit them [here](https://github.com/ikkz/anki-templet/issues).
+For suggestions and feedback, please submit them [here](https://github.com/ikkz/anki-template/issues).
 
 # Templates
 
@@ -25,9 +25,9 @@ For suggestions and feedback, please submit them [here](https://github.com/ikkz/
 
 ### Fields
 
-|Field name| Description|
-|---|---|
-|question|This is the stem of the question. It supports various content formats in Anki, including bold, formulas, etc.|
-|optionA...F|This is the content of the question options. Options that are not filled in will not be displayed, and various formats are also supported.|
-|answer|This is the answer to the question. For multiple-choice questions, please write the uppercase letter of the correct answer, for example, A. For multiple-choice questions, write all the correct answer letters, such as ABC.|
-|note|You can fill in detailed explanations, notes, etc., here.|
+| Field name  | Description                                                                                                                                                                                                                   |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| question    | This is the stem of the question. It supports various content formats in Anki, including bold, formulas, etc.                                                                                                                 |
+| optionA...F | This is the content of the question options. Options that are not filled in will not be displayed, and various formats are also supported.                                                                                    |
+| answer      | This is the answer to the question. For multiple-choice questions, please write the uppercase letter of the correct answer, for example, A. For multiple-choice questions, write all the correct answer letters, such as ABC. |
+| note        | You can fill in detailed explanations, notes, etc., here.                                                                                                                                                                     |
