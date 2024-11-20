@@ -1,5 +1,6 @@
 import genanki
 import json
+import os
 
 with open("./templates.json") as file:
     templates_config = json.load(file)
@@ -40,8 +41,13 @@ def gen_apkg(id: str, locale: str):
             ),
         )
         deck.add_note(note)
-    genanki.Package(deck).write_to_file(f"{folder}/release.apkg")
 
+    genanki.Package(deck).write_to_file(
+        f"release/{template['name']} Template [{locale}].apkg"
+    )
+
+
+os.makedirs("release", exist_ok=True)
 
 for id in templates_config.keys():
     for locale in ["zh", "en"]:
