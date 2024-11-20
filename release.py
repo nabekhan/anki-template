@@ -43,7 +43,7 @@ def gen_apkg(id: str, locale: str):
         deck.add_note(note)
 
     genanki.Package(deck).write_to_file(
-        f"release/{template['name']} Template [{locale}].apkg"
+        f"release/{template['name']} Template-{locale}.apkg"
     )
 
 
