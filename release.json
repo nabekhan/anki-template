@@ -1,0 +1,37 @@
+{
+  "mcq": {
+    "id": {
+      "en": 1725616643031,
+      "zh": 1730012858034
+    },
+    "deck": 1551516477,
+    "notes": [
+      {
+        "fields": {
+          "question": "This is the stem of the question. It supports various content formats in Anki, including bold, formulas, etc.",
+          "optionA": "This is the content of the question options.",
+          "optionB": "Options that are not filled in will not be displayed.",
+          "optionC": "And various formats are also supported.",
+          "answer": "AC",
+          "note": "Above is the answer to the question. For multiple-choice questions, please write the uppercase letter of the correct answer, for example, A. For multiple-choice questions, write all the correct answer letters, such as ABC."
+        }
+      }
+    ]
+  },
+  "basic": {
+    "id": {
+      "zh": 1382768988,
+      "en": 1971232741
+    },
+    "deck": 1962326180,
+    "notes": [
+      {
+        "fields": {
+          "question": "This is the stem of the question. It supports various content formats in Anki, including bold, formulas, etc.",
+          "answer": "This is answer",
+          "note": "Above is the answer to the question."
+        }
+      }
+    ]
+  }
+}

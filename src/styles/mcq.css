@@ -1,0 +1,8 @@
+.select-type-hint::after {
+  writing-mode: vertical-rl;
+}
+
+.locale-zh .select-type-hint::after {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
