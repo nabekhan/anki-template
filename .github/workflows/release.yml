@@ -1,15 +1,16 @@
-name: Releases
+name: Release
 
 on:
   push:
-    tags:
-      - '*'
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
       - name: Install pnpm
@@ -20,15 +21,34 @@ jobs:
           node-version: 22.x
           cache: 'pnpm'
       - run: pnpm install
-      - run: node cli.js
+
+      - name: Create Release Pull Request or Tag
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: pnpm changeset tag
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build templates
+        if: steps.changesets.outputs.published == 'true'
+        run: node cli.js
 
       - name: Install uv
+        if: steps.changesets.outputs.published == 'true'
         uses: astral-sh/setup-uv@v3
         with:
           version: '0.4.27'
-      - name: Release
+      - name: Gen APKG
+        if: steps.changesets.outputs.published == 'true'
         run: uv run --frozen release.py
-      - uses: ncipollo/release-action@v1.14.0
+
+      - name: Release
+        if: steps.changesets.outputs.published == 'true'
+        uses: ncipollo/release-action@v1.14.0
         with:
           artifacts: 'release/*.apkg'
           artifactErrorsFailBuild: true
+          tag: ${{format('v{0}', fromJSON(steps.changesets.outputs.publishedPackages)[0].version)}}
+          allowUpdates: true
+          omitBodyDuringUpdate: true
