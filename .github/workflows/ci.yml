@@ -27,7 +27,7 @@ jobs:
         with:
           version: '0.4.27'
       - name: Release Test
-        run: uv run --frozen release.
+        run: uv run --frozen release.py
 
       - name: Upload APKGs
         uses: actions/upload-artifact@v4.4.3
