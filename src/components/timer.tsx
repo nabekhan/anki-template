@@ -1,14 +1,12 @@
 import { Block } from './block';
 import { Input } from './input';
 import { hideTimerAtom } from './settings';
-
+import { t } from '@/utils/locale';
+import { atomWithLocalStorage } from '@/utils/storage';
 import useCountDown from 'ahooks/es/useCountDown';
 import useCreation from 'ahooks/es/useCreation';
 import { useAtom, useAtomValue } from 'jotai';
 import { FC, useState } from 'react';
-
-import { t } from '@/utils/locale';
-import { atomWithLocalStorage } from '@/utils/storage';
 
 export const Timer: FC = () => {
   const timer = useAtomValue(timerAtom);

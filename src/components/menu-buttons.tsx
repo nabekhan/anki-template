@@ -1,10 +1,10 @@
-import { FC } from 'react';
-import { locale } from 'at/locale';
+import { LinkButton } from './link-button';
 import imgBaiduFanyi from '@/assets/baidu-fanyi.png';
 import imgBaidu from '@/assets/baidu.png';
-import imgGoogle from '@/assets/google.svg';
 import imgGoogleTranslate from '@/assets/google-translate.svg';
-import { LinkButton } from './link-button';
+import imgGoogle from '@/assets/google.svg';
+import { locale } from 'at/locale';
+import { FC } from 'react';
 
 const BaiduTranslate: FC<{ sel: string }> = ({ sel }) => (
   <LinkButton

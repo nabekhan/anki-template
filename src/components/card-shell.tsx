@@ -2,6 +2,7 @@ import { About } from './about';
 import { Block } from './block';
 import { CardContainer } from './card-container';
 import { Dot } from './dot';
+import { AnkiField } from './field';
 import { SelectionMenu } from './selection-menu';
 import {
   Settings,
@@ -14,12 +15,10 @@ import { TimerBlock } from './timer';
 import { useBack } from '@/hooks/use-back';
 import { useField } from '@/hooks/use-field';
 import { t } from '@/utils/locale';
-
-import { useAtomValue } from 'jotai';
-import { FC, ReactNode, useRef, useState } from 'react';
-import { AnkiField } from './field';
 import { locale } from 'at/locale';
 import clsx from 'clsx';
+import { useAtomValue } from 'jotai';
+import { FC, ReactNode, useRef, useState } from 'react';
 
 interface Props {
   header?: ReactNode;

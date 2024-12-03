@@ -1,5 +1,5 @@
-import { atomWithStorage, createJSONStorage } from 'jotai/utils';
 import { id } from 'at/options';
+import { atomWithStorage, createJSONStorage } from 'jotai/utils';
 
 const storage = createJSONStorage<any>(() => localStorage);
 

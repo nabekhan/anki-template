@@ -1,9 +1,9 @@
-import { AnkiField } from '@/components/field';
 import { CardShell } from '../components/card-shell';
+import { AnkiField } from '@/components/field';
+import { FIELD_ID } from '@/utils/const';
+import { isFieldEmpty } from '@/utils/field';
 import { t } from '@/utils/locale';
 import clsx from 'clsx';
-import { isFieldEmpty } from '@/utils/field';
-import { FIELD_ID } from '@/utils/const';
 
 export default () => {
   const hasNote = !isFieldEmpty(FIELD_ID('note'));

@@ -4,7 +4,10 @@
   "version": "1.1.2",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node build/cli.js",
+    "dev": "node build/cli.js --dev",
+    "lint": "pnpm eslint .",
+    "format": "pnpm eslint --fix ."
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +27,7 @@
     "@rollup/pluginutils": "^5.1.0",
     "@tailwindcss/forms": "^0.5.8",
     "@tailwindcss/typography": "^0.5.15",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@tsconfig/node20": "^20.1.4",
     "@tsconfig/vite-react": "^3.0.2",
     "@types/node": "^22.5.3",

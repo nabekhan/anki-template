@@ -1,12 +1,10 @@
 import { About } from './about';
 import { Checkbox } from './checkbox';
-
-import { useAtom } from 'jotai';
-import { FC } from 'react';
-import { id } from 'at/options';
-
 import { t } from '@/utils/locale';
 import { atomWithLocalStorage } from '@/utils/storage';
+import { id } from 'at/options';
+import { useAtom } from 'jotai';
+import { FC } from 'react';
 
 export const randomOptionsAtom = atomWithLocalStorage<boolean>(
   'randomOptions',

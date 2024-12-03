@@ -1,12 +1,9 @@
+import '@/global.css';
+import store from '@/store';
+import { APP_CONTAINER_ID } from '@/utils/const';
+import { Provider } from 'jotai';
 import { render } from 'preact';
 import { ComponentType } from 'react';
-
-import { APP_CONTAINER_ID } from '@/utils/const';
-
-import '@/global.css';
-
-import { Provider } from 'jotai';
-import store from '@/store';
 
 let container: HTMLElement | null = document.getElementById(APP_CONTAINER_ID);
 

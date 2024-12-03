@@ -1,8 +1,7 @@
-import { useThrottle } from 'react-use';
-import { FC, PropsWithChildren, RefObject, useEffect, useState } from 'react';
-
-import { useTextSelection } from '@/hooks/use-text-selection';
 import { SearchButton, TranslateButton } from './menu-buttons';
+import { useTextSelection } from '@/hooks/use-text-selection';
+import { FC, PropsWithChildren, RefObject, useEffect, useState } from 'react';
+import { useThrottle } from 'react-use';
 
 export const SelectionMenu: FC<
   PropsWithChildren & { target: RefObject<HTMLDivElement> }

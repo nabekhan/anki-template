@@ -1,8 +1,7 @@
+import { FIELD_ID } from '@/utils/const';
 import useCreation from 'ahooks/es/useCreation';
 import clsx from 'clsx';
 import { FC, memo, useCallback, useId } from 'react';
-
-import { FIELD_ID } from '@/utils/const';
 
 export const AnkiField: FC<{
   name: string;

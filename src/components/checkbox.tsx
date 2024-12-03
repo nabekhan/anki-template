@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import { doNothing } from 'remeda';
 import { FC, useId } from 'react';
+import { doNothing } from 'remeda';
 
 export const Checkbox: FC<{
   onChange?: (checked: boolean) => void;

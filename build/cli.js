@@ -1,12 +1,13 @@
 #!/usr/bin/env node
-
+import { rollupOptions } from './rollup.js';
+import { readJson } from './utils.js';
 import Koa from 'koa';
-import templates from './templates.json' with { type: 'json' };
-import { rollup } from 'rollup';
-import { watch } from 'rollup';
 import { extname } from 'node:path';
 import { parseArgs } from 'node:util';
-import { rollupOptions } from './build.js';
+import { rollup } from 'rollup';
+import { watch } from 'rollup';
+
+const templates = await readJson('./templates.json');
 
 const { values: args } = parseArgs({
   options: {

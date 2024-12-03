@@ -32,7 +32,7 @@ jobs:
 
       - name: Build templates
         if: steps.changesets.outputs.published == 'true'
-        run: node cli.js
+        run: pnpm run build
 
       - name: Install uv
         if: steps.changesets.outputs.published == 'true'

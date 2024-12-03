@@ -1,3 +1,4 @@
+import { CardShell } from '../components/card-shell';
 import { ErrorList } from '../components/error-list';
 import { AnkiField } from '../components/field';
 import {
@@ -9,6 +10,10 @@ import { useBack } from '../hooks/use-back';
 import { useField } from '../hooks/use-field';
 import { useStorage } from '../hooks/use-storage';
 import { t } from '../utils/locale';
+import { randomOptionsAtom } from '@/components/settings';
+import '@/styles/mcq.css';
+import { FIELD_ID } from '@/utils/const';
+import { getFieldText, isFieldEmpty } from '@/utils/field';
 import { useAutoAnimate } from '@formkit/auto-animate/preact';
 import useCreation from 'ahooks/es/useCreation';
 import useMemoizedFn from 'ahooks/es/useMemoizedFn';
@@ -18,14 +23,9 @@ import { locale } from 'at/locale';
 import { fields } from 'at/options';
 import clsx from 'clsx';
 import { useAtomValue } from 'jotai';
-import { shuffle } from 'remeda';
 import { useEffect } from 'react';
+import { shuffle } from 'remeda';
 
-import { randomOptionsAtom } from '@/components/settings';
-import { CardShell } from '../components/card-shell';
-import '@/styles/mcq.css';
-import { getFieldText, isFieldEmpty } from '@/utils/field';
-import { FIELD_ID } from '@/utils/const';
 const fieldToAlpha = (field: string) => field.slice(field.length - 1);
 
 export default () => {

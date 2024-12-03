@@ -1,7 +1,7 @@
 import { Dialog, Transition } from '@headlessui/react';
 import clsx from 'clsx';
-import { doNothing } from 'remeda';
 import { FC, Fragment, PropsWithChildren } from 'react';
+import { doNothing } from 'remeda';
 
 export const Modal: FC<
   PropsWithChildren & {

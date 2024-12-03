@@ -1,5 +1,4 @@
 import packageJson from '../../package.json';
-
 import { locale } from 'at/locale';
 import clsx from 'clsx';
 

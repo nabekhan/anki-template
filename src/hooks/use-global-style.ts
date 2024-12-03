@@ -1,7 +1,6 @@
+import { APP_CONTAINER_ID } from '@/utils/const';
 import useCreation from 'ahooks/es/useCreation';
 import { useEffect } from 'react';
-
-import { APP_CONTAINER_ID } from '@/utils/const';
 
 export const useGlobalStyle = (style: string) => {
   const node = useCreation(() => {

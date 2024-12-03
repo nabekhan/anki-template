@@ -1,6 +1,5 @@
-import { useState } from 'react';
-
 import { isBack } from '@/utils/is-back';
+import { useState } from 'react';
 
 const storageKey = (key: string) => `as-storage-${key}`;
 

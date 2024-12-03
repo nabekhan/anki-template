@@ -1,24 +1,26 @@
-import packageJson from './package.json' with { type: 'json' };
-import { visualizer } from 'rollup-plugin-visualizer';
-import templates from './templates.json' with { type: 'json' };
-import release from './release.json' with { type: 'json' };
-import autoprefixer from 'autoprefixer';
-import tailwindcss from 'tailwindcss';
-import cssnano from 'cssnano';
+import { readJson, ensureValue } from './utils.js';
 import alias from '@rollup/plugin-alias';
-import terser from '@rollup/plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
 import html from '@rollup/plugin-html';
 import json from '@rollup/plugin-json';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
+import terser from '@rollup/plugin-terser';
 import url from '@rollup/plugin-url';
 import virtual from '@rollup/plugin-virtual';
 import { dataToEsm } from '@rollup/pluginutils';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+import fs from 'node:fs/promises';
+import { extname, resolve } from 'node:path';
 import postcss from 'rollup-plugin-postcss';
 import { swc } from 'rollup-plugin-swc3';
-import { resolve, extname } from 'node:path';
-import fs from 'node:fs/promises';
+import { visualizer } from 'rollup-plugin-visualizer';
+import tailwindcss from 'tailwindcss';
+
+const packageJson = await readJson('./package.json');
+const templates = await readJson('./templates.json');
+const release = await readJson('./release.json');
 
 export async function rollupOptions(config) {
   async function buildInputOptions() {
@@ -51,10 +53,10 @@ export async function rollupOptions(config) {
               find: 'lodash/isPlainObject',
               replacement: resolve(
                 import.meta.dirname,
-                'src/polyfills/is-plain-object',
+                '../src/polyfills/is-plain-object',
               ),
             },
-            { find: '@', replacement: resolve(import.meta.dirname, 'src') },
+            { find: '@', replacement: resolve(import.meta.dirname, '../src') },
             { find: 'react', replacement: 'preact/compat' },
             { find: 'react-dom/test-utils', replacement: 'preact/test-utils' },
             { find: 'react-dom', replacement: 'preact/compat' },
@@ -201,8 +203,4 @@ ${buildFields()}
   import { setup } from '@/entries';
   setup(App);`;
   }
-}
-
-function ensureValue(value) {
-  return typeof value === 'function' ? value() : value;
 }
