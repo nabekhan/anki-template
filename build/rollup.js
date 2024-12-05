@@ -1,3 +1,5 @@
+import devServer from './plugins/dev-server/index.js';
+import generateTemplate from './plugins/generate-template.js';
 import { readJson, ensureValue } from './utils.js';
 import alias from '@rollup/plugin-alias';
 import commonjs from '@rollup/plugin-commonjs';
@@ -12,7 +14,7 @@ import { dataToEsm } from '@rollup/pluginutils';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import fs from 'node:fs/promises';
-import { extname, resolve } from 'node:path';
+import { resolve } from 'node:path';
 import postcss from 'rollup-plugin-postcss';
 import { swc } from 'rollup-plugin-swc3';
 import { visualizer } from 'rollup-plugin-visualizer';
@@ -109,6 +111,26 @@ export async function rollupOptions(config) {
         }),
         url(),
         visualizer(),
+        html({
+          fileName: `front.html`,
+          template({ files }) {
+            let frontHtml = '';
+            frontHtml += `<div data-at-version="${packageJson.version}" id="at-root"></div>`;
+            frontHtml += `<style>${files?.css?.map(({ source }) => source).join('')}</style>`;
+            frontHtml += `
+<div id="at-fields" style="display:none;">
+${buildFields()}
+</div>
+`;
+            frontHtml +=
+              files.js
+                ?.map(({ code }) => `<script>${code}</script>`)
+                .join('') || '';
+            return frontHtml;
+          },
+        }),
+        generateTemplate(),
+        envValue(false, () => devServer()),
       ],
       onwarn(warning, warn) {
         if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {
@@ -133,44 +155,6 @@ export async function rollupOptions(config) {
             }),
           false,
         ),
-        html({
-          fileName: `front.html`,
-          template({ files }) {
-            let frontHtml = '';
-            frontHtml += `<div data-at-version="${packageJson.version}" id="at-root"></div>`;
-            frontHtml += `<style>${files?.css?.map(({ source }) => source).join('')}</style>`;
-            frontHtml += `
-<div id="at-fields" style="display:none;">
-${buildFields()}
-</div>
-`;
-            frontHtml +=
-              files.js
-                ?.map(({ code }) => `<script>${code}</script>`)
-                .join('') || '';
-            return frontHtml;
-          },
-        }),
-        {
-          name: 'generate-template',
-          generateBundle(_, bundle) {
-            Object.keys(bundle)
-              .filter((fileName) => extname(fileName) !== '.html')
-              .forEach((fileName) => {
-                delete bundle[fileName];
-              });
-            this.emitFile({
-              type: 'asset',
-              fileName: `style.css`,
-              source: ``,
-            });
-            this.emitFile({
-              type: 'asset',
-              fileName: `back.html`,
-              source: `<div id="at-back-indicator"></div>{{FrontSide}}`,
-            });
-          },
-        },
       ],
     };
   }
