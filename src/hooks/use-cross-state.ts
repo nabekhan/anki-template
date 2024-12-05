@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 const storageKey = (key: string) => `as-storage-${key}`;
 
-export function useStorage<T>(key: string, initialValue: T) {
+export function useCrossState<T>(key: string, initialValue: T) {
   const getStoreValue = (): T => {
     try {
       const str = sessionStorage.getItem(storageKey(key));

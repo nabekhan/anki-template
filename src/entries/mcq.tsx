@@ -7,8 +7,8 @@ import {
   hideQuestionTypeAtom,
 } from '../components/settings';
 import { useBack } from '../hooks/use-back';
+import { useCrossState } from '../hooks/use-cross-state';
 import { useField } from '../hooks/use-field';
-import { useStorage } from '../hooks/use-storage';
 import { t } from '../utils/locale';
 import { randomOptionsAtom } from '@/components/settings';
 import '@/styles/mcq.css';
@@ -44,12 +44,12 @@ export default () => {
 
     return [options, shuffle(options)] as const;
   }, []);
-  const [options, setOptions] = useStorage(
+  const [options, setOptions] = useCrossState(
     'options-array',
     prefRandomOptions ? shuffledOptions : originOptions,
   );
 
-  const [storedSelections, setStoredSelections] = useStorage<string[]>(
+  const [storedSelections, setStoredSelections] = useCrossState<string[]>(
     'selected',
     [],
   );
@@ -98,7 +98,7 @@ export default () => {
   const note = useField('note');
   const isMultipleChoice = answers.length > 1;
 
-  const [blurred, setBlurred] = useStorage(
+  const [blurred, setBlurred] = useCrossState(
     'blurred',
     useAtomValue(blurOptionsAtom),
   );

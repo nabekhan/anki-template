@@ -4,7 +4,11 @@ import clsx from 'clsx';
 
 export const EnAbout = () => (
   <div className={clsx('prose prose-sm', 'dark:prose-invert')}>
-    <p>Thank you for using my carefully crafted Anki template!</p>
+    <p>
+      Thank you for using my carefully crafted Anki template! If you like my
+      template, consider supporting me{' '}
+      <a href="https://afdian.com/a/leoly">here</a> ❤️.
+    </p>
 
     <p>
       You can find all the templates I&apos;ve created{' '}
@@ -25,8 +29,10 @@ export const EnAbout = () => (
 
 export const ZhAbout = () => (
   <div className={clsx('prose prose-sm', 'dark:prose-invert')}>
-    <p>感谢您使用我精心制作的 Anki 模板！</p>
-
+    <p>
+      感谢您使用我精心制作的 Anki 模板！ 如果你喜欢我的模板，可以考虑在{' '}
+      <a href="https://afdian.com/a/leoly">这里</a> 支持我 ❤️
+    </p>
     <p>
       您可以在 <a href="https://github.com/ikkz/anki-template">这里</a>{' '}
       找到我创建的所有模板
