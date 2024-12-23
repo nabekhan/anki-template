@@ -10,13 +10,14 @@ For suggestions and feedback, please submit them [here](https://github.com/ikkz/
 
 All of the templates have the following common features:
 
+- After selecting text, you can directly click to ask gpt, search or translate the corresponding text, and customization is also supported
 - Support larger question text.
-- After selecting text, you can directly click to search or translate the corresponding text
 - Support dark mode and light mode.
 - Countdown: Give you motivation to learn.
 
 ### Multiple Choice
 
+- Support hiding options to avoid potential answer hints
 - Support single choice and multiple choice.
 - Scrambled question options are restored after showing the answer.
 - Obvious answer markers.
@@ -68,4 +69,4 @@ A Simple Q&A Template
 
 <img width="552" alt="图片" src="https://github.com/user-attachments/assets/b70ee32f-6ad3-4374-9224-8b6d54d57f9a" />
 
-
+<img width="552" alt="图片" src="https://github.com/user-attachments/assets/3bfadeee-1876-4e3c-90ee-1c6ad53d71d3" />
