@@ -64,4 +64,8 @@ A Simple Q&A Template
 
 <img width="632" alt="image" src="https://github.com/user-attachments/assets/edce65fd-2560-47db-a6e5-ffe7dcd00a02">
 
-<img width="627" alt="image" src="https://github.com/user-attachments/assets/04147c87-ea2a-4d24-a7fe-566265533be9">
+<img width="609" alt="图片" src="https://github.com/user-attachments/assets/143df030-a8d7-4fdc-9566-927b70aa4921" />
+
+<img width="552" alt="图片" src="https://github.com/user-attachments/assets/b70ee32f-6ad3-4374-9224-8b6d54d57f9a" />
+
+
