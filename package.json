@@ -59,7 +59,7 @@
   "dependencies": {
     "@formkit/auto-animate": "^0.8.2",
     "ahooks": "^3.8.1",
-    "anki-storage": "^1.0.1",
+    "anki-storage": "^1.0.2",
     "clsx": "^2.1.1",
     "jotai": "^2.11.0",
     "lucide-react": "^0.468.0",
