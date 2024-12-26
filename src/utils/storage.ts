@@ -4,7 +4,11 @@ import { id } from 'at/options';
 import { atomWithStorage, createJSONStorage } from 'jotai/utils';
 
 function createAnkiDroidStorage() {
-  const as = getAnkiStorage();
+  const as: ReturnType<typeof getAnkiStorage> = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(getAnkiStorage());
+    }, 0);
+  });
   const updaters = new Map<string, Array<(value: string | null) => void>>();
 
   return createJSONStorage<any>(() => ({
