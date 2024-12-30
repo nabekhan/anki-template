@@ -1,14 +1,13 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: ''
-labels: ''
+title: "[Bug] "
+labels: bug
 assignees: ''
 
 ---
 
-> [!NOTE]
-> I maintain this project in my limited spare time. If you would like your bug report to be prioritized, please consider sponsoring me [here](https://afdian.com/a/leoly).
+<!-- I maintain this project in my limited spare time. If you would like your bug report to be prioritized, please consider sponsoring me here: https://afdian.com/a/leoly -->
 
 **Describe the bug**
 A clear and concise description of what the bug is.
