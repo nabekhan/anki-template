@@ -68,7 +68,7 @@ const CommonOptions: FC = () => {
 let OptionList: FC;
 
 // these branches can be treeshaken by rollup
-if (entry === 'mcq') {
+if (entry === 'mcq' || entry === 'mcq_10') {
   OptionList = () => {
     const [randomOptions, setRandomOptions] = useAtom(randomOptionsAtom);
     const [hideQuestionType, setHideQuestionType] =
