@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     if: |
-      !startsWith(github.event.head_commit.message , 'chore: release')
+      startsWith(github.event.head_commit.message , 'chore: release playground')
     runs-on: ubuntu-latest
     permissions:
       contents: read

@@ -11,6 +11,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      deployments: write
     steps:
       - uses: actions/checkout@v4
       - name: Install pnpm
@@ -32,6 +33,8 @@ jobs:
           version: '0.4.27'
       - name: Gen APKG
         run: pnpm run package
+      - name: Build playground
+        run: pnpm run pg-build
 
       - name: Create Release Pull Request or Tag
         id: changesets
@@ -52,3 +55,13 @@ jobs:
           tag: ${{format('v{0}', fromJSON(steps.changesets.outputs.publishedPackages)[0].version)}}
           allowUpdates: true
           omitBodyDuringUpdate: true
+
+      - name: Publish playground
+        if: steps.changesets.outputs.published == 'true'
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: 'ikkz-template'
+          directory: 'playground/dist'
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
