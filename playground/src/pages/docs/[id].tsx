@@ -1,6 +1,8 @@
 import { Header } from '../../components/header';
+import { siteName } from '../../const';
 import { useRequest } from 'ahooks';
 import { Spin } from 'antd';
+import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router';
 
 export default () => {
@@ -17,6 +19,9 @@ export default () => {
 
   return (
     <div className="p-4 max-w-[700px] mx-auto">
+      <Helmet>
+        <title>{`${params.id} - ${siteName} Docs`}</title>
+      </Helmet>
       <Header />
       {loading ? (
         <Spin className="flex items-center justify-center" />

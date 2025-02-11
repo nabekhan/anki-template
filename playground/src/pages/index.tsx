@@ -1,11 +1,20 @@
 import { Previewer } from '../components/previewer';
 import { TemplateSelector } from '../components/template-selector';
+import { siteName } from '../const';
 import { useTemplate } from '../hooks/use-template';
+import { Helmet } from 'react-helmet-async';
 
 const IndexPage = () => {
   const [template] = useTemplate();
   return (
     <div className="md:flex h-full">
+      <Helmet>
+        <title>
+          {template
+            ? `${template} - ${siteName} Playground`
+            : `${siteName} Playground`}
+        </title>
+      </Helmet>
       <div className="md:w-[400px] md:border-r p-6">
         <TemplateSelector />
       </div>

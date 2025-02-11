@@ -14,3 +14,5 @@ export const fieldOptions = [
   { value: 'native', label: 'The native Anki field' },
   { value: 'markdown', label: 'With markdown support, but larger size' },
 ];
+
+export const siteName = 'ikkz Template';
