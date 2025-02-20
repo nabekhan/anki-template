@@ -1,4 +1,5 @@
 # Markdown support
+
 The markdown format of the template is supported through [ByteMD](https://github.com/pd4d10/bytemd). Therefore, if you want to preview it in real time while editing, you can use ByteMD's [playground](https://bytemd.js.org/playground/) directly.
 
 However, please note that not all plugins available in the playground are enabled in the template. For the specific list of enabled plugins, please refer to [this link](https://github.com/ikkz/anki-template/blob/main/src/features/markdown/renderer.tsx#L20-L26).
@@ -6,9 +7,10 @@ However, please note that not all plugins available in the playground are enable
 Below are some of the available formats and render results.
 
 ## Markdown Basic Syntax
-<img width="674" alt="图片" src="https://github.com/user-attachments/assets/368396a3-e027-400b-9dc5-9e9bcee1c11b" />
 
-```markdown
+![markdown-basic](../assets/markdown-basic.png)
+
+````markdown
 I just love **bold text**. Italicized text is the _cat's meow_. At the command prompt, type `nano`.
 
 My favorite markdown editor is [ByteMD](https://github.com/bytedance/bytemd).
@@ -19,14 +21,14 @@ My favorite markdown editor is [ByteMD](https://github.com/bytedance/bytemd).
 
 > Dorothy followed her through many of the beautiful rooms in her castle.
 
-``` js
-import gfm from '@bytemd/plugin-gfm'
-import { Editor, Viewer } from 'bytemd'
+```js
+import gfm from '@bytemd/plugin-gfm';
+import { Editor, Viewer } from 'bytemd';
 
 const plugins = [
   gfm(),
   // Add more plugins here
-]
+];
 
 const editor = new Editor({
   target: document.body, // DOM to render
@@ -34,15 +36,17 @@ const editor = new Editor({
     value: '',
     plugins,
   },
-})
+});
 
 editor.on('change', (e) => {
-  editor.$set({ value: e.detail.value })
-})
+  editor.$set({ value: e.detail.value });
+});
 ```
+````
 
 ## GFM Extended Syntax
-<img width="672" alt="图片" src="https://github.com/user-attachments/assets/0b0219c4-b032-42f9-b934-66fef70a8f10" />
+
+![markdown-gfm](../assets/markdown-gfm.png)
 
 ```markdown
 Automatic URL Linking: https://github.com/bytedance/bytemd
@@ -60,7 +64,8 @@ Automatic URL Linking: https://github.com/bytedance/bytemd
 ```
 
 ## Math Equation
-<img width="670" alt="图片" src="https://github.com/user-attachments/assets/87779cb5-ce85-4c1f-bc90-209dc6196b7c" />
+
+![markdown-math](../assets/markdown-math.png)
 
 ```markdown
 Inline math equation: $a+b$
@@ -71,9 +76,10 @@ $$
 ```
 
 ## Mermaid Diagrams
-<img width="667" alt="图片" src="https://github.com/user-attachments/assets/55bc20cc-b106-4814-b61c-fd18b5f7c878" />
 
-```markdown
+![markdown-mermaid](../assets/markdown-mermaid.png)
+
+````markdown
 ```mermaid
 mindmap
   root((mindmap))
@@ -92,5 +98,5 @@ mindmap
     Tools
       Pen and paper
       Mermaid
-
 ```
+````

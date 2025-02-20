@@ -7,3 +7,7 @@ body,
 #root {
   @apply h-screen;
 }
+
+.prose img {
+  @apply rounded-xl shadow-xl;
+}
