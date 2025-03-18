@@ -22,20 +22,6 @@ jobs:
           node-version: '23.6'
           cache: 'pnpm'
       - run: pnpm install
-      - run: pnpm typecheck
-      - run: pnpm test
-      - name: Build templates
-        run: pnpm run build
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v3
-        with:
-          version: '0.4.27'
-      - name: Gen APKG
-        run: pnpm run package
-      - name: Build playground
-        run: pnpm run pg-build
-
       - name: Create Release Pull Request or Tag
         id: changesets
         uses: changesets/action@v1
@@ -46,15 +32,21 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Release
+      - name: Build templates
         if: steps.changesets.outputs.published == 'true'
-        uses: ncipollo/release-action@v1.14.0
+        run: pnpm run build
+
+      - name: Install uv
+        if: steps.changesets.outputs.published == 'true'
+        uses: astral-sh/setup-uv@v3
         with:
-          artifacts: 'release/*.apkg'
-          artifactErrorsFailBuild: true
-          tag: ${{format('v{0}', fromJSON(steps.changesets.outputs.publishedPackages)[0].version)}}
-          allowUpdates: true
-          omitBodyDuringUpdate: true
+          version: '0.4.27'
+      - name: Gen APKG
+        if: steps.changesets.outputs.published == 'true'
+        run: pnpm run package
+      - name: Build playground
+        if: steps.changesets.outputs.published == 'true'
+        run: pnpm run pg-build
 
       - name: Publish playground
         if: steps.changesets.outputs.published == 'true'
