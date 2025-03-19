@@ -1,3 +1,4 @@
+import { useCloze } from '../cloze/use-cloze';
 import pluginBreaks from '@bytemd/plugin-breaks';
 import pluginGfm from '@bytemd/plugin-gfm';
 import pluginMath from '@bytemd/plugin-math';
@@ -13,7 +14,8 @@ export const Markdown: FC<{
   value: string;
   id?: string;
   className?: string;
-}> = memo(({ value, className, id }) => {
+  cloze?: boolean;
+}> = memo(({ value, className, id, cloze }) => {
   const ref = useRef<HTMLDivElement>(null);
   const plugins = useCreation(
     () => [
@@ -51,6 +53,11 @@ export const Markdown: FC<{
       cbs?.forEach((cb) => cb && cb());
     };
   }, [file, plugins]);
+
+  if (cloze) {
+    // wont change
+    useCloze(ref);
+  }
 
   useExternal(
     locale === 'zh'

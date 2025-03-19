@@ -106,6 +106,8 @@ const mcq_10 = defineEntry({
   notes: mcq.notes,
 });
 
+const wrapClozeUnit = (str: string) => `{{${str}}}`;
+
 const entries = {
   mcq,
   mcq_10,
@@ -189,6 +191,36 @@ const entries = {
           question: mdQuestion,
           items:
             'Mammals::Tiger,,Elephant<br>Birds::Penguin,,Parrot<br>Reptiles::Cobra,,Crocodile',
+          note: 'note',
+        },
+      },
+    ],
+  }),
+  cloze: defineEntry({
+    desc: 'Cloze template',
+    fields: ['question', 'answer', 'note', 'Tags'],
+    notes: [
+      {
+        config: {
+          field: 'native',
+        },
+        fields: {
+          question:
+            '<h1>Cloze</h1><p>Cloze {{template}}.</p><p>Besides the dedicated {{cloze}} template, all other templates can enable the cloze function in settings (effective on the next card).</p><p>To use, wrap the text you want to cloze with double curly braces, for example, {{text}}. Multiple clozes and image/formula clozes are also supported.</p>{{<img src="https://developer.mozilla.org/favicon.ico"/>}}<h2>Fields</h2><p>All fields are consistent with the basic template.</p>',
+          answer: 'answer',
+          note: 'note',
+        },
+      },
+      {
+        config: {
+          field: 'markdown',
+        },
+        fields: {
+          question: mdQuestion
+            .replace('Basic Syntax', wrapClozeUnit)
+            .replace('love **bold', wrapClozeUnit)
+            .replace('$a+b$', wrapClozeUnit),
+          answer: 'answer',
           note: 'note',
         },
       },
