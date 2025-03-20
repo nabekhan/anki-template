@@ -110,7 +110,9 @@ const useCloze = (ref: RefObject<HTMLElement>) => {
       if (back || !target || !(target instanceof Element)) {
         return;
       }
-      const node = target.closest(`.${CLOZE_CLASS}`);
+      const node =
+        target.closest(`.${CLOZE_CLASS}`) ||
+        el.querySelector(`[${CLOZE_HIDDEN}='true'].${CLOZE_CLASS}`);
       if (!node) {
         return;
       }

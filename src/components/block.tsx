@@ -16,14 +16,14 @@ export const Block: FC<
   const prefSelectionMenu = useAtomValue(selectionMenuAtom);
 
   return (
-    <div className={clsx('mb-6', className)} ref={ref} id={id}>
-      <div className="mb-1 px-4 text-sm text-gray-500 flex justify-between">
+    <div className={clsx('mb-6 sm:mx-5', className)} ref={ref} id={id}>
+      <div className="mb-1 mx-5 text-sm text-gray-500 flex justify-between">
         <span>{name}</span>
         {action ? action : null}
       </div>
       <div
         className={clsx(
-          'rounded-xl border bg-white px-4 py-5',
+          'sm:rounded-xl border-y sm:border bg-white px-5 py-5',
           'dark:border-gray-500 dark:bg-opacity-5',
         )}
       >
