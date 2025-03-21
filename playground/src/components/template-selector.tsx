@@ -66,7 +66,7 @@ export const TemplateSelector: FC = () => {
       <List
         bordered
         dataSource={filteredConfigs}
-        rootClassName="h-[300px]"
+        rootClassName="h-[300px] md:flex-1"
         renderItem={(item) => (
           <List.Item
             className={clsx(
