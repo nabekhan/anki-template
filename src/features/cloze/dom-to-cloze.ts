@@ -89,12 +89,6 @@ export function domToCloze(container: HTMLElement): number {
       const endIndex = content.indexOf(UNIT_END);
       const hasStart = startIndex >= 0;
       const hasEnd = endIndex >= 0;
-      if (inUnit && !hasStart && !hasEnd) {
-        const unit = createTextUnit(content, unitIndex);
-        node.parentNode?.replaceChild(unit, node);
-        return;
-      }
-
       if (inUnit && hasEnd) {
         const unit = createTextUnit(content.slice(0, endIndex), unitIndex++);
         node.parentNode?.insertBefore(unit, node);
@@ -125,6 +119,9 @@ export function domToCloze(container: HTMLElement): number {
           insertAfter(node, unit);
           inUnit = true;
         }
+      } else if (inUnit) {
+        const unit = createTextUnit(content, unitIndex);
+        node.parentNode?.replaceChild(unit, node);
       }
     } else if (inUnit && asWhole(node)) {
       setClozeType(node, 'whole');
