@@ -41,6 +41,7 @@ export const TemplateSelector: FC = () => {
           allowClear
           value={entry}
           onChange={setEntry}
+          listHeight={420}
         />
         <div>Language</div>
         <Select
