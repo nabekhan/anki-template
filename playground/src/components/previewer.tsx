@@ -126,6 +126,13 @@ const PreviewerFrame: FC<{ build: BuildJson; front: string; back: string }> = ({
           >
             Docs
           </Button>
+          <Button
+            type="text"
+            download={`${build.config.name}.apkg`}
+            href={`/releases/${build.config.name}.apkg`}
+          >
+            Download
+          </Button>
           {build.config.field === undefined ? (
             <Button
               type="text"
