@@ -44,16 +44,16 @@ export default () => {
                     #{report.datas[0].index}{' '}
                     {report.hasWholeType ? `(${t.unsupportedClozeType})` : ''}
                   </div>
-                  <div>
+                  <div className="typeAns">
                     {report.ops?.map((op, idx) => (
                       <span
                         key={idx}
                         className={clsx({
-                          'bg-green-200 dark:bg-green-900/50':
+                          'bg-green-200 dark:bg-green-900/50 typeGood':
                             op.kind === 'retain',
-                          'bg-yellow-200 dark:bg-yellow-900/50':
+                          'bg-yellow-200 dark:bg-yellow-900/50 typeMissed':
                             op.kind === 'insert',
-                          'bg-red-200 dark:bg-red-900/50 line-through':
+                          'bg-red-200 dark:bg-red-900/50 line-through typeBad':
                             op.kind === 'delete',
                         })}
                       >

@@ -1,3 +1,4 @@
+import { tw } from '@/styles/tw';
 import clsx from 'clsx';
 import { FC } from 'react';
 
@@ -21,8 +22,9 @@ export const Input: FC<{
       <input
         type={type}
         className={clsx(
-          'block w-full rounded-md border border-neutral-300 px-3 py-2 text-center text-neutral-900 shadow-sm outline-none placeholder:text-neutral-400',
-          'dark:border-gray-500 dark:bg-neutral-800 dark:text-white',
+          'block w-full rounded-md border px-3 py-2 text-center text-neutral-900 shadow-sm outline-none placeholder:text-neutral-400',
+          'dark:bg-neutral-800 dark:text-white',
+          tw.borderColor,
         )}
         value={value}
         onChange={(e) => onChange?.(e.target.value)}

@@ -1,3 +1,4 @@
+import { tw } from '@/styles/tw';
 import clsx from 'clsx';
 import { FC, ReactNode, useId } from 'react';
 import { doNothing } from 'remeda';
@@ -30,7 +31,9 @@ export const Checkbox: FC<{
           id={id}
           type="checkbox"
           className={clsx(
-            'h-4 w-4 rounded border-gray-300 text-indigo-500 focus:ring-0 disabled:bg-gray-200',
+            'h-4 w-4 rounded text-indigo-500 focus:ring-0 disabled:bg-gray-200',
+            tw.borderColor,
+            'dark:bg-neutral-600',
           )}
           checked={checked}
           onChange={

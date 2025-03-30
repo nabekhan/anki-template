@@ -2,6 +2,7 @@ import { CardShell } from '@/components/card-shell';
 import { Tag } from '@/components/tag';
 import { useBack } from '@/hooks/use-back';
 import { useCrossState } from '@/hooks/use-cross-state';
+import { tw } from '@/styles/tw';
 import { FIELD_ID } from '@/utils/const';
 import { domToText } from '@/utils/dom-to-text';
 import { isFieldEmpty } from '@/utils/field';
@@ -89,7 +90,10 @@ const CategoryContainer: FC<{
     [collection.items, dropped],
   );
   return (
-    <div ref={setNodeRef} className={clsx('border p-2 min-h-20')}>
+    <div
+      ref={setNodeRef}
+      className={clsx('border p-2 min-h-20 rounded', tw.borderColor)}
+    >
       <div className="font-semibold text-lg">{category.name}</div>
       <div className="flex flex-wrap gap-2 mt-2">
         {dropped.map((item) => (
