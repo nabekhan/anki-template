@@ -14,6 +14,7 @@ For suggestions and feedback, please submit them [here](https://github.com/ikkz/
 | tf       | True or false                         | [Preview](https://template.ikkz.fun/?template=tf.en.native) [Docs](https://template.ikkz.fun/docs/tf)         |
 | basic    | Basic Q&A                             | [Preview](https://template.ikkz.fun/?template=basic.en.native) [Docs](https://template.ikkz.fun/docs/basic)   |
 | cloze    | Cloze template                        | [Preview](https://template.ikkz.fun/?template=cloze.en.native) [Docs](https://template.ikkz.fun/docs/cloze)   |
+| input    | Type in answer                        | [Preview](https://template.ikkz.fun/?template=input.en.native) [Docs](https://template.ikkz.fun/docs/input)   |
 
 All of the templates have the following common features:
 

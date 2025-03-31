@@ -50,7 +50,7 @@ const CommonOptions: FC = () => {
         onChange={setSelectionMenu}
         data-testid="setting:selectionMenu"
       />
-      {entry !== 'cloze' ? (
+      {!['cloze', 'input'].includes(entry) ? (
         <Checkbox
           title={t.cloze}
           subtitle={t.clozeDetail}
