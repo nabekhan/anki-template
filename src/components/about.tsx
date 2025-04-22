@@ -1,6 +1,7 @@
 import { version } from '../../package.json';
 import { entry, locale } from 'at/options';
 import clsx from 'clsx';
+import { memo, useEffect, useState } from 'react';
 
 export const EnAbout = () => (
   <div className={clsx('prose prose-sm', 'dark:prose-invert')}>
@@ -69,4 +70,31 @@ export const ZhAbout = () => (
   </div>
 );
 
-export const About = locale === 'zh' ? ZhAbout : EnAbout;
+const AboutComponent = locale === 'zh' ? ZhAbout : EnAbout;
+
+export const About = memo(() => {
+  const [clicks, setClicks] = useState(0);
+
+  useEffect(() => {
+    if (clicks === 10) {
+      const script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/eruda';
+      script.onload = () => {
+        window.eruda?.init();
+      };
+      document.head.appendChild(script);
+    }
+  }, [clicks]);
+
+  return (
+    <div onClick={() => setClicks((prev) => prev + 1)}>
+      <AboutComponent />
+    </div>
+  );
+});
+
+declare global {
+  interface Window {
+    eruda?: any;
+  }
+}
