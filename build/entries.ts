@@ -107,7 +107,7 @@ const mcq_10 = defineEntry({
 });
 
 const mcq_26 = defineEntry({
-  desc: 'Multiple choice question (10 options)',
+  desc: 'Multiple choice question (26 options)',
   fields: [
     'question',
     'optionA',
