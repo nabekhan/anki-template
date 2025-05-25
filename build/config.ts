@@ -24,6 +24,7 @@ export const items: ConfigItem[] = [
       'tf',
       'basic',
       'mcq_10',
+      'mcq_26',
       'match',
       'cloze',
       'input',
