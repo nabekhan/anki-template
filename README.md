@@ -9,7 +9,8 @@ For suggestions and feedback, please submit them [here](https://github.com/ikkz/
 | Template | Description                           | Links                                                                                                         |
 | -------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | mcq      | Multiple choice question (6 options)  | [Preview](https://template.ikkz.fun/?template=mcq.en.native) [Docs](https://template.ikkz.fun/docs/mcq)       |
-| mcq_10   | Multiple choice question (10 options) | [Preview](https://template.ikkz.fun/?template=mcq_10.en.native) [Docs](https://template.ikkz.fun/docs/mcq_10) |
+| mcq_10   | Multiple choice question (10 options) | [Preview](https://template.ikkz.fun/?template=mcq_10.en.native) [Docs](https://template.ikkz.fun/docs/mcq) |
+| mcq_26   | Multiple choice question (26 options) | [Preview](https://template.ikkz.fun/?template=mcq_26.en.native) [Docs](https://template.ikkz.fun/docs/mcq) |
 | match    | Drag and drop interactive matching    | [Preview](https://template.ikkz.fun/?template=match.en.native) [Docs](https://template.ikkz.fun/docs/match)   |
 | tf       | True or false                         | [Preview](https://template.ikkz.fun/?template=tf.en.native) [Docs](https://template.ikkz.fun/docs/tf)         |
 | basic    | Basic Q&A                             | [Preview](https://template.ikkz.fun/?template=basic.en.native) [Docs](https://template.ikkz.fun/docs/basic)   |

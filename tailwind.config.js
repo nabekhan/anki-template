@@ -20,7 +20,10 @@ module.exports = {
     require('@tailwindcss/forms'),
   ],
   safelist: [
-    Array.from({ length: 26 }, (_, i) => `before:content-['${String.fromCharCode(65 + i)}']`),
+    Array.from(
+      { length: 26 },
+      (_, i) => `before:content-['${String.fromCharCode(65 + i)}']`,
+    ),
     ['missedAnswer', 'correctAnswer', 'wrongAnswer']
       .map((key) => [zh, en, ja].map((map) => `after:content-['${map[key]}']`))
       .flat(),
