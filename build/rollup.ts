@@ -41,11 +41,12 @@ export async function rollupOptions(
       .then(JSON.parse);
     return {
       input: 'entry',
-      jsx: {
-        mode: 'automatic',
-        factory: 'h',
-        fragment: 'Fragment',
-        importSource: 'preact',
+      jsx: 'react-jsx',
+      transform: {
+        jsx: {
+          runtime: 'automatic',
+          importSource: 'preact',
+        },
       },
       moduleTypes: {
         '.svg': 'dataurl',
