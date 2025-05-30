@@ -14,7 +14,12 @@ export const SETTINGS = [
   ...MCQ_SETTINGS,
 ];
 
-export const DEFAULT_SETTINGS = ['selectionMenu', 'randomOptions', 'noScroll'];
+export const DEFAULT_SETTINGS = [
+  'selectionMenu',
+  'randomOptions',
+  'noScroll',
+  'hideTimer',
+];
 
 export const settingSelector = (key: string) =>
   `[data-testid="setting:${key}"] input`;
