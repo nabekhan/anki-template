@@ -13,7 +13,7 @@ export const biggerTextAtom = atomWithScopedStorage<boolean>(
   'biggerText',
   false,
 );
-export const hideTimerAtom = atomWithScopedStorage<boolean>('hideTimer', false);
+export const hideTimerAtom = atomWithScopedStorage<boolean>('hideTimer', true);
 export const hideQuestionTypeAtom = atomWithScopedStorage<boolean>(
   'hideQuestionType',
   false,
