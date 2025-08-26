@@ -33,7 +33,7 @@ for name in os.listdir(dist_dir):
     model = genanki.Model(
         config["type_id"],
         f"IKKZ__{config['name']}".upper(),
-        fields=list(map(lambda field: {"name": field}, fields)),
+        fields=list(map(lambda field: {"name": field, "font": "Arial"}, fields)),
         templates=[{"name": "Card 1", "qfmt": front, "afmt": back}],
     )
     deck = genanki.Deck(
