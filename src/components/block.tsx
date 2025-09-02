@@ -29,8 +29,8 @@ export const Block: FC<
           tw.borderColor,
         )}
       >
-        {enableTools && prefSelectionMenu ? (
-          <ToolsContext>{children}</ToolsContext>
+        {enableTools ? (
+          <ToolsContext enabled={prefSelectionMenu}>{children}</ToolsContext>
         ) : (
           children
         )}

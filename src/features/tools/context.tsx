@@ -7,7 +7,10 @@ import { useAtomValue } from 'jotai/react';
 import { FC, PropsWithChildren, useMemo, useRef } from 'react';
 import { useThrottle } from 'react-use';
 
-export const ToolsContext: FC<PropsWithChildren> = ({ children }) => {
+export const ToolsContext: FC<PropsWithChildren & { enabled?: boolean }> = ({
+  children,
+  enabled,
+}) => {
   const ref = useRef<HTMLDivElement>(null);
   const { clientRect, textContent } = useTextSelection(ref);
   const throttledRect = useThrottle(clientRect, 60);
@@ -15,7 +18,7 @@ export const ToolsContext: FC<PropsWithChildren> = ({ children }) => {
   const tools = useAtomValue(toolsAtom);
 
   const toolsPopover = useMemo(() => {
-    if (!throttledRect || !text) {
+    if (!throttledRect || !text || !enabled) {
       return null;
     }
     const { top, left, height } = throttledRect;
@@ -48,7 +51,7 @@ export const ToolsContext: FC<PropsWithChildren> = ({ children }) => {
         </div>
       </div>
     );
-  }, [throttledRect, text, tools]);
+  }, [throttledRect, text, tools, enabled]);
 
   return (
     <div className="relative" ref={ref}>
