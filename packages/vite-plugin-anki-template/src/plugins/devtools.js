@@ -1,5 +1,3 @@
-import type { Plugin } from 'vite';
-import type { Props } from '../index.js';
 import { parseDocument, DomUtils } from 'htmlparser2';
 import { Element, Text } from 'domhandler';
 
@@ -26,7 +24,7 @@ back.onclick = ()=> setCardBack(true);
 document.body.appendChild(actionsContainer);
 `;
 
-export const devtools = (props: Props) => {
+export const devtools = (props) => {
   return {
     name: '@anki-eco/devtools',
     apply: 'serve',
@@ -37,8 +35,7 @@ export const devtools = (props: Props) => {
         body,
         new Element('script', {}, [new Text(runtime)])
       );
-
       return DomUtils.getOuterHTML(dom, { decodeEntities: false });
     },
-  } as Plugin;
+  };
 };

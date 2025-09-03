@@ -41,7 +41,8 @@
           "buildDepsName": "build-deps",
           "watchDepsName": "watch-deps"
         }
-      }
+      },
+      "exclude": ["packages/vite-plugin-anki-template/*"]
     },
     {
       "plugin": "@nx/eslint/plugin",
@@ -72,6 +73,15 @@
         "watchDepsTargetName": "watch-deps",
         "buildDepsTargetName": "build-deps",
         "typecheckTargetName": "typecheck"
+      }
+    },
+    {
+      "plugin": "@nx/js/typescript",
+      "include": ["packages/vite-plugin-anki-template/*"],
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        }
       }
     }
   ],
