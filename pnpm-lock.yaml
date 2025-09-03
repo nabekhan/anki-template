@@ -114,6 +114,9 @@ importers:
 
   packages/vite-plugin-anki-template:
     dependencies:
+      '@anki-eco/packager':
+        specifier: workspace:*
+        version: link:../packager
       domhandler:
         specifier: ^5.0.3
         version: 5.0.3

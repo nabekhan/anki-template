@@ -1,6 +1,7 @@
 import { parseDocument, DomUtils } from 'htmlparser2';
 import { Element, Text } from 'domhandler';
 
+/** @returns {import('vite').Plugin} */
 export const injectFields = (props) => {
   return {
     name: '@anki-eco/injectFields',

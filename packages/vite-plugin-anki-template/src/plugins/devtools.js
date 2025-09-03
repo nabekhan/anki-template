@@ -24,6 +24,7 @@ back.onclick = ()=> setCardBack(true);
 document.body.appendChild(actionsContainer);
 `;
 
+/** @returns {import('vite').Plugin} */
 export const devtools = (props) => {
   return {
     name: '@anki-eco/devtools',
