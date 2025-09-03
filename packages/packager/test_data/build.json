@@ -1,10 +1,8 @@
 {
-  "config": {
-    "note_type_name": "Test Note Type",
-    "deck_name": "Test Deck",
-    "type_id": 1234567890,
-    "deck_id": 9876543210
-  },
+  "note_type_name": "Test Note Type",
+  "deck_name": "Test Deck",
+  "note_type_id": 1234567890,
+  "deck_id": 9876543210,
   "fields": ["question", "answer"],
   "notes": [
     {

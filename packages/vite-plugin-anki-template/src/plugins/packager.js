@@ -30,12 +30,10 @@ export const packager = (/** @type import('../index.d.ts').Props */ props) => {
         type: 'asset',
         fileName: 'build.json',
         source: JSON.stringify({
-          config: {
-            type_id: props.note_type_id,
-            note_type_name: props.note_type_name,
-            deck_id: props.deck_id,
-            deck_name: props.deck_name,
-          },
+          note_type_id: props.note_type_id,
+          note_type_name: props.note_type_name,
+          deck_id: props.deck_id,
+          deck_name: props.deck_name,
           fields: props.fields,
           notes: props.notes,
         }),

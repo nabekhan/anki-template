@@ -3,31 +3,30 @@
   "title": "Anki Deck Build Configuration",
   "description": "Schema for build.json files used in Anki deck packaging",
   "type": "object",
-  "required": ["config", "fields", "notes"],
+  "required": [
+    "note_type_name",
+    "deck_name",
+    "note_type_id",
+    "deck_id",
+    "fields",
+    "notes"
+  ],
   "properties": {
-    "config": {
-      "type": "object",
-      "description": "Configuration for the Anki deck and note type",
-      "required": ["note_type_name", "deck_name", "type_id", "deck_id"],
-      "properties": {
-        "note_type_name": {
-          "type": "string",
-          "description": "Name of the Anki note type"
-        },
-        "deck_name": {
-          "type": "string",
-          "description": "Name of the Anki deck"
-        },
-        "type_id": {
-          "type": "integer",
-          "description": "Unique identifier for the note type"
-        },
-        "deck_id": {
-          "type": "integer",
-          "description": "Unique identifier for the deck"
-        }
-      },
-      "additionalProperties": false
+    "note_type_name": {
+      "type": "string",
+      "description": "Name of the Anki note type"
+    },
+    "deck_name": {
+      "type": "string",
+      "description": "Name of the Anki deck"
+    },
+    "note_type_id": {
+      "type": "integer",
+      "description": "Unique identifier for the note type"
+    },
+    "deck_id": {
+      "type": "integer",
+      "description": "Unique identifier for the deck"
     },
     "fields": {
       "type": "array",
@@ -57,7 +56,7 @@
           }
         },
         "additionalProperties": false
-      }
-    }
+    },
+    "additionalProperties": false
   }
 }

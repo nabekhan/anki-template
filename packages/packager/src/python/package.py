@@ -40,13 +40,12 @@ def package_anki_deck(input_dir, output_dir):
         with open(build_json_path, "r", encoding="utf-8") as f:
             build = json.load(f)
 
-        config = build["config"]
         notes = build["notes"]
         fields = build["fields"]
 
-        # Get note type name and deck name from config
-        note_type_name = config["note_type_name"]
-        deck_name = config["deck_name"]
+        # Get note type name and deck name from build config
+        note_type_name = build["note_type_name"]
+        deck_name = build["deck_name"]
 
         print(f"Packaging '{deck_name}' with note type '{note_type_name}'...")
 
@@ -58,20 +57,17 @@ def package_anki_deck(input_dir, output_dir):
 
         # Create Anki model
         model = genanki.Model(
-            config["type_id"],
+            build["note_type_id"],
             note_type_name,
             fields=list(map(lambda field: {"name": field, "font": "Arial"}, fields)),
             templates=[{"name": "Card 1", "qfmt": front, "afmt": back}],
         )
 
         # Create deck
-        deck = genanki.Deck(deck_id=config["deck_id"], name=deck_name)
+        deck = genanki.Deck(deck_id=build["deck_id"], name=deck_name)
 
         # Add notes to deck
         for note_config in notes:
-            if "question" in note_config["fields"]:
-                note_config["fields"]["question"] += f"<br>[{config['deck_id']}]"
-
             note = genanki.Note(
                 model=model,
                 fields=list(
