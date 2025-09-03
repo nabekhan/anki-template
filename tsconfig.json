@@ -8,6 +8,9 @@
     },
     {
       "path": "./packages/vite-plugin-anki-template"
+    },
+    {
+      "path": "./templates/mcq"
     }
   ]
 }
