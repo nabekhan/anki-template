@@ -1,8 +1,6 @@
 import { parseDocument, DomUtils } from 'htmlparser2';
 import { consts } from '../const.js';
 
-import { ankiPackage } from '@anki-eco/packager';
-
 const genFrontHtml = (html) => {
   const dom = parseDocument(html);
   const body = DomUtils.getElementsByTagName('body', dom)[0];
@@ -55,6 +53,7 @@ export const packager = (/** @type import('../index.d.ts').Props */ props) => {
     },
 
     async writeBundle(options) {
+      const { ankiPackage } = await import('@anki-eco/packager');
       await ankiPackage({ cwd: options.dir, input: '.', output: '.' });
     },
     apply: 'build',

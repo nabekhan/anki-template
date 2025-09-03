@@ -1,5 +1,6 @@
 import { parseDocument, DomUtils } from 'htmlparser2';
 import { Element, Text } from 'domhandler';
+import { consts } from '../const.js';
 
 /** @returns {import('vite').Plugin} */
 export const injectFields = (props) => {
@@ -10,7 +11,7 @@ export const injectFields = (props) => {
       const body = DomUtils.getElementsByTagName('body', dom)[0];
       const fieldsContainer = new Element('div', {
         style: 'display: none',
-        id: 'anki-eco-fields',
+        id: consts.fieldContainerId,
       });
       props.fields.forEach((name) => {
         DomUtils.appendChild(
@@ -18,7 +19,7 @@ export const injectFields = (props) => {
           new Element(
             'div',
             {
-              'data-anki-eco-field': name,
+              [consts.fieldNameAttr]: name,
             },
             [new Text(`{{${name}}}`)]
           )

@@ -1,5 +1,6 @@
 import { parseDocument, DomUtils } from 'htmlparser2';
 import { Element, Text } from 'domhandler';
+import { consts } from '../const.js';
 
 const runtime = `
 const actionsContainer = document.createElement('div');
@@ -13,8 +14,8 @@ actionsContainer.appendChild(front);
 actionsContainer.appendChild(back);
 
 const setCardBack = (back) => {
-  if (window._ankiEcoSetCardBack) {
-    _ankiEcoSetCardBack(back);
+  if (window.${consts.globalSetBack}) {
+    ${consts.globalSetBack}(back);
   }
 }
 
