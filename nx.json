@@ -13,6 +13,12 @@
     "package": {
       "dependsOn": ["build"]
     },
+    "build": {
+      "cache": true
+    },
+    "test": {
+      "cache": true
+    },
     "@nx/js:tsc": {
       "cache": true,
       "dependsOn": ["^build"],
