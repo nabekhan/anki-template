@@ -338,7 +338,7 @@ importers:
         specifier: ^3.107.3
         version: 3.114.14
 
-  templates/mcq:
+  templates/example-react:
     devDependencies:
       '@anki-eco/vite-plugin-anki-template':
         specifier: workspace:*

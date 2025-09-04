@@ -10,7 +10,7 @@
       "path": "./packages/vite-plugin-anki-template"
     },
     {
-      "path": "./templates/mcq"
+      "path": "./templates/example-react"
     }
   ]
 }

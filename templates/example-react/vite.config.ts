@@ -5,7 +5,7 @@ import { vitePluginAnkiTemplate } from '@anki-eco/vite-plugin-anki-template';
 
 export default defineConfig(() => ({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/templates/mcq-template',
+  cacheDir: '../../node_modules/.vite/templates/example-react',
   server: {
     port: 4200,
     host: 'localhost',
