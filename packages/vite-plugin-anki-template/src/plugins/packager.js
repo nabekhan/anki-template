@@ -1,5 +1,4 @@
 import { parseDocument, DomUtils } from 'htmlparser2';
-import { consts } from '../const.js';
 
 const genFrontHtml = (html) => {
   const dom = parseDocument(html);
@@ -19,7 +18,8 @@ export const packager = (/** @type import('../index.d.ts').Props */ props) => {
   return {
     name: '@anki-eco/package',
 
-    generateBundle(_, bundle) {
+    async generateBundle(_, bundle) {
+      const { consts } = await import('@anki-eco/shared');
       const html = bundle['index.html']?.source;
 
       if (!html) {

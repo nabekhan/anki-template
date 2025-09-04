@@ -1,12 +1,5 @@
-export interface Props {
-  note_type_id: number;
-  note_type_name: string;
-  deck_name: string;
-  deck_id: number;
-  fields: string[];
-  notes: {
-    fields: Record<string, string>;
-  }[];
-}
+import type { PackagerType as Props } from '@anki-eco/shared';
+
+export { Props };
 
 export declare const vitePluginAnkiTemplate: (props: Props) => any;

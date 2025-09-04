@@ -11,6 +11,12 @@
     },
     {
       "path": "./templates/example-react"
+    },
+    {
+      "path": "./packages/kit"
+    },
+    {
+      "path": "./packages/shared"
     }
   ]
 }

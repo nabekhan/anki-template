@@ -1,5 +1,3 @@
-import { consts } from '../const.js';
-
 /** @returns {import('vite').Plugin} */
 export const injectFields = (
   /** @type import('../index.d.ts').Props */ props
@@ -11,7 +9,8 @@ export const injectFields = (
     configResolved(resolved) {
       config = resolved;
     },
-    transformIndexHtml(_, ctx) {
+    async transformIndexHtml() {
+      const { consts } = await import('@anki-eco/shared');
       const devFields = props.notes[0]?.fields;
       if (!devFields) {
         throw new Error('requires at least one note');

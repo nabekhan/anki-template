@@ -13,5 +13,3 @@ export const vitePluginAnkiTemplate = (props) => {
     packager(props),
   ];
 };
-
-export { consts } from './const.js';
