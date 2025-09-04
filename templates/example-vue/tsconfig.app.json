@@ -25,7 +25,7 @@
       "path": "../../packages/kit/tsconfig.lib.json"
     },
     {
-      "path": "../../packages/vite-plugin-anki-template/tsconfig.lib.json"
+      "path": "../../packages/vite-plugin/tsconfig.lib.json"
     }
   ]
 }

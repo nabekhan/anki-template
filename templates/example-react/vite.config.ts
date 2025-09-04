@@ -1,7 +1,7 @@
 /// <reference types='vitest' />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { vitePluginAnkiTemplate } from '@anki-eco/vite-plugin-anki-template';
+import { vitePluginAnkiTemplate } from '@anki-eco/vite-plugin';
 
 export default defineConfig(() => ({
   root: __dirname,

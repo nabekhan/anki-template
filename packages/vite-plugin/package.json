@@ -1,5 +1,5 @@
 {
-  "name": "@anki-eco/vite-plugin-anki-template",
+  "name": "@anki-eco/vite-plugin",
   "version": "0.0.1",
   "private": true,
   "type": "module",

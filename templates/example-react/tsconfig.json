@@ -6,7 +6,7 @@
       "path": "../../packages/kit"
     },
     {
-      "path": "../../packages/vite-plugin-anki-template"
+      "path": "../../packages/vite-plugin"
     },
     {
       "path": "./tsconfig.app.json"

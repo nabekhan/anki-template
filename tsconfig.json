@@ -7,7 +7,7 @@
       "path": "./packages/packager"
     },
     {
-      "path": "./packages/vite-plugin-anki-template"
+      "path": "./packages/vite-plugin"
     },
     {
       "path": "./templates/example-react"

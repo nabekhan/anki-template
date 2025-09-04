@@ -6,6 +6,6 @@
     "@anki-eco/kit": "workspace:*"
   },
   "devDependencies": {
-    "@anki-eco/vite-plugin-anki-template": "workspace:*"
+    "@anki-eco/vite-plugin": "workspace:*"
   }
 }
