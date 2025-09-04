@@ -1,5 +1,3 @@
-import { parseDocument, DomUtils } from 'htmlparser2';
-import { Element, Text } from 'domhandler';
 import { consts } from '../const.js';
 
 const runtime = `
@@ -30,14 +28,8 @@ export const devtools = (props) => {
   return {
     name: '@anki-eco/devtools',
     apply: 'serve',
-    transformIndexHtml: async (html) => {
-      const dom = parseDocument(html);
-      const body = DomUtils.getElementsByTagName('body', dom)[0];
-      DomUtils.prependChild(
-        body,
-        new Element('script', {}, [new Text(runtime)])
-      );
-      return DomUtils.getOuterHTML(dom, { decodeEntities: false });
-    },
+    transformIndexHtml: () => [
+      { tag: 'script', injectTo: 'body', children: runtime },
+    ],
   };
 };

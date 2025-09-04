@@ -1,32 +1,42 @@
-import { parseDocument, DomUtils } from 'htmlparser2';
-import { Element, Text } from 'domhandler';
 import { consts } from '../const.js';
 
 /** @returns {import('vite').Plugin} */
-export const injectFields = (props) => {
+export const injectFields = (
+  /** @type import('../index.d.ts').Props */ props
+) => {
+  let config;
+
   return {
     name: '@anki-eco/injectFields',
-    transformIndexHtml: (html) => {
-      const dom = parseDocument(html);
-      const body = DomUtils.getElementsByTagName('body', dom)[0];
-      const fieldsContainer = new Element('div', {
-        style: 'display: none',
-        id: consts.fieldContainerId,
-      });
-      props.fields.forEach((name) => {
-        DomUtils.appendChild(
-          fieldsContainer,
-          new Element(
-            'div',
-            {
+    configResolved(resolved) {
+      config = resolved;
+    },
+    transformIndexHtml(_, ctx) {
+      const devFields = props.notes[0]?.fields;
+      if (!devFields) {
+        throw new Error('requires at least one note');
+      }
+      return [
+        {
+          injectTo: 'body-prepend',
+
+          tag: 'div',
+          attrs: {
+            style: 'display: none',
+            id: consts.fieldContainerId,
+          },
+          children: props.fields.map((name) => ({
+            tag: 'div',
+            attrs: {
               [consts.fieldNameAttr]: name,
             },
-            [new Text(`{{${name}}}`)]
-          )
-        );
-      });
-      DomUtils.prependChild(body, fieldsContainer);
-      return DomUtils.getOuterHTML(dom);
+            children:
+              config?.command === 'build'
+                ? `{{${name}}}`
+                : devFields[name] || name,
+          })),
+        },
+      ];
     },
   };
 };

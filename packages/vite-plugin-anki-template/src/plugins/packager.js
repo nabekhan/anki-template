@@ -52,6 +52,7 @@ export const packager = (/** @type import('../index.d.ts').Props */ props) => {
 
     async writeBundle(options) {
       const { ankiPackage } = await import('@anki-eco/packager');
+      console.log('\nStart generating apkg...');
       await ankiPackage({ cwd: options.dir, input: '.', output: '.' });
     },
     apply: 'build',
