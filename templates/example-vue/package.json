@@ -1,5 +1,5 @@
 {
-  "name": "@anki-eco/example-react",
+  "name": "@anki-eco/example-vue",
   "version": "0.0.1",
   "private": true,
   "dependencies": {

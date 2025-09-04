@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "../../packages/kit"
+    },
+    {
+      "path": "../../packages/vite-plugin-anki-template"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ]
+}
