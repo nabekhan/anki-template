@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "@anki-eco/vite-plugin-anki-template": "workspace:*"
+    "@anki-eco/vite-plugin-anki-template": "workspace:*",
+    "@anki-eco/kit": "workspace:*"
   }
 }

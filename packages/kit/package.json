@@ -13,9 +13,24 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
+    },
+    "./react": {
+      "development": "./src/react/index.ts",
+      "types": "./dist/react/index.d.ts",
+      "import": "./dist/react.js",
+      "default": "./dist/react.js"
     }
   },
   "dependencies": {
-    "@anki-eco/shared": "workspace:*"
+    "@anki-eco/shared": "workspace:*",
+    "jotai": "^2.11.0"
+  },
+  "peerDependencies": {
+    "react": "*"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
   }
 }

@@ -13,6 +13,9 @@
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
   "targetDefaults": {
+    "dev": {
+      "dependsOn": ["^build"]
+    },
     "package": {
       "dependsOn": ["build"]
     },

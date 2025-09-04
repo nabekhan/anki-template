@@ -3,7 +3,7 @@ export const consts = {
   fieldContainerId: 'anki-eco-fields',
   fieldNameAttr: 'data-anki-eco-field',
   globalSetBack: '_ankiEcoSetCardBack',
-};
+} as const;
 
 export interface PackagerType {
   note_type_id: number;

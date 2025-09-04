@@ -3,6 +3,9 @@
   "include": [],
   "references": [
     {
+      "path": "../../packages/kit"
+    },
+    {
       "path": "../../packages/vite-plugin-anki-template"
     },
     {

@@ -114,6 +114,12 @@ importers:
       '@anki-eco/shared':
         specifier: workspace:*
         version: link:../shared
+      jotai:
+        specifier: ^2.11.0
+        version: 2.13.1(@babel/core@7.28.3)(@babel/template@7.27.2)(@types/react@18.3.24)(react@18.3.1)
+      react:
+        specifier: '*'
+        version: 18.3.1
 
   packages/packager:
     dependencies:
@@ -358,6 +364,9 @@ importers:
 
   templates/example-react:
     devDependencies:
+      '@anki-eco/kit':
+        specifier: workspace:*
+        version: link:../../packages/kit
       '@anki-eco/vite-plugin-anki-template':
         specifier: workspace:*
         version: link:../../packages/vite-plugin-anki-template

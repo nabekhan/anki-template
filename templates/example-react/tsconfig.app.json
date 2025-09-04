@@ -30,6 +30,9 @@
   "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
   "references": [
     {
+      "path": "../../packages/kit/tsconfig.lib.json"
+    },
+    {
       "path": "../../packages/vite-plugin-anki-template/tsconfig.lib.json"
     }
   ]
