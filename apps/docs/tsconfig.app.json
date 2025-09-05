@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "types": ["vite/client"],
-    "rootDir": ".vitepress",
+    "rootDir": ".",
     "jsx": "preserve",
     "jsxImportSource": "vue",
     "module": "esnext",
@@ -18,6 +18,10 @@
     ".vitepress/**/*.test.ts",
     ".vitepress/**/*.spec.vue",
     ".vitepress/**/*.test.vue",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "src/**/*.spec.vue",
+    "src/**/*.test.vue",
     "eslint.config.js",
     "eslint.config.cjs",
     "eslint.config.mjs"
@@ -27,6 +31,11 @@
     ".vitepress/**/*.jsx",
     ".vitepress/**/*.ts",
     ".vitepress/**/*.mts",
-    ".vitepress/**/*.vue"
+    ".vitepress/**/*.vue",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.ts",
+    "src/**/*.mts",
+    "src/**/*.vue"
   ]
 }

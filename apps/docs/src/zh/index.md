@@ -3,23 +3,21 @@
 layout: home
 
 hero:
-  name: "Anki Eco"
-  text: "Enhance your Anki experience"
-  tagline: My great project tagline
+  name: 'Anki Eco'
+  text: 'Enhance your Anki experience'
+  # tagline: My great project tagline
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
-
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+      text: 指南
+      link: /zh/guide/packager
+    # - theme: alt
+    #   text: API Examples
+    #   link: /api-examples
+# features:
+#   - title: Feature A
+#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+#   - title: Feature B
+#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+#   - title: Feature C
+#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-
