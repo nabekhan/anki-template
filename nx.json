@@ -107,8 +107,9 @@
   },
   "release": {
     "projects": ["packages/*"],
+    "projectsRelationship": "independent",
     "version": {
-      "preserveLocalDependencyProtocols": false,
+      "preserveLocalDependencyProtocols": true,
       "preVersionCommand": "pnpm exec nx run-many -t build -p packages/*",
       "versionActionsOptions": {
         "skipLockFileUpdate": true

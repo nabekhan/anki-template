@@ -1,6 +1,6 @@
 {
   "name": "@anki-eco/packager",
-  "bin": "./dist/bin.js",
+  "bin": "./bin/packager.js",
   "type": "module",
   "version": "1.0.0",
   "main": "./dist/index.js",
