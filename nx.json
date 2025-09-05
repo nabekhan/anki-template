@@ -107,9 +107,13 @@
   },
   "release": {
     "projects": ["packages/*"],
-    "projectsRelationship": "independent",
+    "releaseTagPattern": "release/{version}",
+    "git": {},
     "version": {
-      "preVersionCommand": "pnpm exec nx run-many -t build -p packages/*"
+      "preVersionCommand": "pnpm exec nx run-many -t build -p packages/*",
+      "versionActionsOptions": {
+        "skipLockFileUpdate": true
+      }
     }
   }
 }

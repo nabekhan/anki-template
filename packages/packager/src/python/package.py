@@ -186,8 +186,6 @@ Examples:
     input_dir = path.abspath(args.input)
     output_dir = path.abspath(args.output)
 
-    print(f"input_dir {input_dir}, cwd: {os.getcwd()}")
-
     print(f"Input directory: {input_dir}")
     print(f"Output directory: {output_dir}")
 
