@@ -5,6 +5,6 @@ const isBack = useIsBack();
 </script>
 
 <template>
-  test <AnkiField name="Q" />
+  vue test <AnkiField name="Q" />
   <AnkiField v-if="isBack" name="A" />
 </template>

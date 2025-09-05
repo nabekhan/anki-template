@@ -17,7 +17,9 @@ const containerRef: Ref<HTMLDivElement | null> = ref(null);
 let clonedNode: Node | null = null;
 
 const updateField = () => {
-  if (!containerRef.value) return;
+  if (!containerRef.value) {
+    return;
+  }
 
   if (clonedNode) {
     containerRef.value.removeChild(clonedNode);
@@ -32,7 +34,9 @@ const updateField = () => {
 };
 
 onMounted(updateField);
-watch(() => props.name, updateField);
+watch(() => props.name, updateField, {
+  flush: 'post',
+});
 
 onUnmounted(() => {
   if (clonedNode && containerRef.value) {

@@ -1,3 +1,4 @@
+import { Text } from 'domhandler';
 import { parseDocument, DomUtils } from 'htmlparser2';
 
 const genFrontHtml = (html) => {
@@ -10,8 +11,23 @@ const genFrontHtml = (html) => {
   );
 
   headNodes.reverse().forEach((node) => DomUtils.prependChild(body, node));
+
+  const scriptNodes = DomUtils.getElementsByTagName('script', body, true);
+
+  scriptNodes.forEach((node) => DomUtils.removeElement(node));
+  scriptNodes.forEach((node) => {
+    delete node.attribs['type'];
+    DomUtils.prependChild(node, new Text('(function() {"use strict";'));
+    DomUtils.appendChild(node, new Text('})();'));
+    DomUtils.appendChild(body, node);
+  });
   return DomUtils.getInnerHTML(body);
 };
+
+const prependBanner = (html) => `
+<!-- @anki-eco/vite-plugin -->
+${html}
+`;
 
 /** @returns {import('vite').Plugin} */
 export const packager = (/** @type import('../index.d.ts').Props */ props) => {
@@ -41,12 +57,14 @@ export const packager = (/** @type import('../index.d.ts').Props */ props) => {
       this.emitFile({
         type: 'asset',
         fileName: 'front.html',
-        source: genFrontHtml(html),
+        source: prependBanner(genFrontHtml(html)),
       });
       this.emitFile({
         type: 'asset',
         fileName: 'back.html',
-        source: `<div id="${consts.backIndicatorId}"></div>{{FrontSide}}`,
+        source: prependBanner(
+          `<div id="${consts.backIndicatorId}"></div>{{FrontSide}}`
+        ),
       });
     },
 
