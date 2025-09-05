@@ -17,7 +17,7 @@ export const useIsBack = () => {
     []
   );
 
-  return [isBack, setIsBack] as const;
+  return isBack;
 };
 
 export function useReviewState<T>(key: string, init: T | (() => T)) {
