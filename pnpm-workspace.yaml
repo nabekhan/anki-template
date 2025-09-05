@@ -1,11 +1,9 @@
 packages:
-  - packages/*
-  - templates/*
-
+  - 'packages/*'
+  - 'templates/*'
+  - 'apps/docs'
 autoInstallPeers: true
-
 strictPeerDependencies: false
-
 onlyBuiltDependencies:
   - '@swc/core'
-  - nx
+  - 'nx'
