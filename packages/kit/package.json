@@ -1,7 +1,6 @@
 {
   "name": "@anki-eco/kit",
   "version": "0.0.1",
-  "private": true,
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -44,5 +43,8 @@
       "optional": true
     }
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "files": [
+    "dist"
+  ]
 }

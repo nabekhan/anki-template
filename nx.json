@@ -108,7 +108,8 @@
   "release": {
     "projects": ["packages/*"],
     "version": {
-      "preserveLocalDependencyProtocols": false
+      "preserveLocalDependencyProtocols": false,
+      "preVersionCommand": "pnpm exec nx run-many -t build -p packages/*"
     }
   }
 }
