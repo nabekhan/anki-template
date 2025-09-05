@@ -6,6 +6,7 @@ export default defineConfig({
 
   title: 'Anki Eco',
   description: 'Enhance your Anki experience',
+  lastUpdated: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -23,8 +24,21 @@ export default defineConfig({
       },
     ],
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
-    ],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/ikkz/anki-eco' }],
+  },
+
+  rewrites: {
+    'en/:rest*': ':rest*',
+  },
+
+  locales: {
+    root: {
+      label: 'English',
+      lang: 'en',
+    },
+    zh: {
+      label: '简体中文',
+      lang: 'zh',
+    },
   },
 });

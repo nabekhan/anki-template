@@ -104,5 +104,11 @@
         "linter": "none"
       }
     }
+  },
+  "release": {
+    "projects": ["packages/*"],
+    "version": {
+      "preserveLocalDependencyProtocols": false
+    }
   }
 }
