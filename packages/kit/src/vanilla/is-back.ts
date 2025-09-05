@@ -1,7 +1,8 @@
 import { consts } from '@anki-eco/shared';
 import { atom } from 'jotai';
 
-const isBack = () => Boolean(document.getElementById(consts.backIndicatorId));
+export const isBack = () =>
+  Boolean(document.getElementById(consts.backIndicatorId));
 
 export const isBackAtom = atom(isBack());
 

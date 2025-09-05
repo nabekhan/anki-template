@@ -1,9 +1,25 @@
 import { consts } from '@anki-eco/shared';
 
+export const getFieldNode = (name: string) => {
+  return document.querySelector(
+    `div[${consts.fieldNameAttr}="${name}"]`
+  ) as HTMLDivElement | null;
+};
+
 export const cloneFieldNode = (name: string) => {
-  const node = document.querySelector(`[${consts.fieldNameAttr}="${name}"]`);
+  return getFieldNode(name)?.cloneNode(true) || null;
+};
+
+export const getFieldText = (name: string) =>
+  getFieldNode(name)?.innerText?.trim() || undefined;
+
+export const isFieldEmpty = (name: string) => {
+  const node = getFieldNode(name);
   if (!node) {
-    return null;
+    return true;
   }
-  return node.cloneNode(true);
+  if (node.innerText?.trim()?.length) {
+    return false;
+  }
+  return !/<(img|video)/.test(node.innerHTML);
 };
