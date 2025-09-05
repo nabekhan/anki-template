@@ -1,6 +1,9 @@
 {
   "name": "@anki-eco/packager",
-  "bin": "./bin/packager.js",
+  "bin": {
+    "@anki-eco/packager": "./bin/packager.js",
+    "_assign_perm": "./dist/anki-eco-packager"
+  },
   "type": "module",
   "version": "1.0.2",
   "main": "./dist/index.js",
