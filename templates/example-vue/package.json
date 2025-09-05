@@ -1,11 +1,11 @@
 {
   "name": "@anki-eco/example-vue",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "private": true,
   "dependencies": {
     "@anki-eco/kit": "workspace:*"
   },
   "devDependencies": {
-    "@anki-eco/vite-plugin": "workspace:*"
+    "@anki-eco/vite-plugin": "1.0.4"
   }
 }
