@@ -109,7 +109,10 @@
     "projects": ["packages/*"],
     "version": {
       "preserveLocalDependencyProtocols": false,
-      "preVersionCommand": "pnpm exec nx run-many -t build -p packages/*"
+      "preVersionCommand": "pnpm exec nx run-many -t build -p packages/*",
+      "versionActionsOptions": {
+        "skipLockFileUpdate": true
+      }
     }
   }
 }
