@@ -1,6 +1,6 @@
 {
   "name": "@anki-eco/vite-plugin",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "module",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
@@ -13,8 +13,8 @@
     "htmlparser2": "^10.0.0",
     "tslib": "^2.3.0",
     "vite-plugin-singlefile": "^2.3.0",
-    "@anki-eco/packager": "workspace:*",
-    "@anki-eco/shared": "workspace:*"
+    "@anki-eco/packager": "1.0.0",
+    "@anki-eco/shared": "1.0.0"
   },
   "peerDependencies": {
     "vite": "*"

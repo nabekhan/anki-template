@@ -1,6 +1,6 @@
 {
   "name": "@anki-eco/kit",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -27,7 +27,7 @@
     }
   },
   "dependencies": {
-    "@anki-eco/shared": "workspace:*",
+    "@anki-eco/shared": "1.0.0",
     "@preact/signals-core": "^1.12.1",
     "jotai": "^2.11.0"
   },
