@@ -1,6 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { isBack } from '../vanilla/is-back.js';
 import { prefixStorage } from '../vanilla/storage.js';
+import { isBackSignal } from '../vanilla/index.js';
+import { effect } from '@preact/signals-core';
+
+export * from './field.jsx';
+
+export const useIsBack = () => {
+  const [isBack, setIsBack] = useState(() => isBackSignal.peek());
+
+  useEffect(
+    () =>
+      effect(() => {
+        setIsBack(isBackSignal.value);
+      }),
+    []
+  );
+
+  return [isBack, setIsBack] as const;
+};
 
 export function useReviewState<T>(key: string, init: T | (() => T)) {
   const [initialValue] = useState(init);

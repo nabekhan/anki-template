@@ -1,6 +1,2 @@
-import { useAtomValue } from 'jotai';
-import { isBackAtom } from '../vanilla/index.js';
-
+export * from './hooks.js';
 export * from './field.jsx';
-
-export const useIsBack = () => useAtomValue(isBackAtom);

@@ -123,12 +123,18 @@ importers:
       '@anki-eco/shared':
         specifier: workspace:*
         version: link:../shared
+      '@preact/signals-core':
+        specifier: ^1.12.1
+        version: 1.12.1
       jotai:
         specifier: ^2.11.0
         version: 2.13.1(@babel/core@7.28.3)(@babel/template@7.27.2)(@types/react@18.3.24)(react@18.3.1)
       react:
         specifier: '*'
         version: 18.3.1
+      vue:
+        specifier: '*'
+        version: 3.5.21(typescript@5.8.3)
 
   packages/packager:
     dependencies:
@@ -2498,6 +2504,9 @@ packages:
 
   '@popperjs/core@2.11.8':
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
+
+  '@preact/signals-core@1.12.1':
+    resolution: {integrity: sha512-BwbTXpj+9QutoZLQvbttRg5x3l5468qaV2kufh+51yha1c53ep5dY4kTuZR35+3pAZxpfQerGJiQqg34ZNZ6uA==}
 
   '@rolldown/binding-android-arm64@1.0.0-beta.34':
     resolution: {integrity: sha512-jf5GNe5jP3Sr1Tih0WKvg2bzvh5T/1TA0fn1u32xSH7ca/p5t+/QRr4VRFCV/na5vjwKEhwWrChsL2AWlY+eoA==}
@@ -11658,6 +11667,8 @@ snapshots:
   '@polka/url@1.0.0-next.29': {}
 
   '@popperjs/core@2.11.8': {}
+
+  '@preact/signals-core@1.12.1': {}
 
   '@rolldown/binding-android-arm64@1.0.0-beta.34':
     optional: true

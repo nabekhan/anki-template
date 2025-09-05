@@ -19,18 +19,30 @@
       "types": "./dist/react/index.d.ts",
       "import": "./dist/react.js",
       "default": "./dist/react.js"
+    },
+    "./vue": {
+      "development": "./src/vue/index.ts",
+      "types": "./dist/vue/index.d.ts",
+      "import": "./dist/vue.js",
+      "default": "./dist/vue.js"
     }
   },
   "dependencies": {
     "@anki-eco/shared": "workspace:*",
+    "@preact/signals-core": "^1.12.1",
     "jotai": "^2.11.0"
   },
   "peerDependencies": {
-    "react": "*"
+    "react": "*",
+    "vue": "*"
   },
   "peerDependenciesMeta": {
     "react": {
       "optional": true
+    },
+    "vue": {
+      "optional": true
     }
-  }
+  },
+  "devDependencies": {}
 }

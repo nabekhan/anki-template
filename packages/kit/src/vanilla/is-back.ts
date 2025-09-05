@@ -1,12 +1,9 @@
 import { consts } from '@anki-eco/shared';
-import { atom } from 'jotai';
+import { signal } from '@preact/signals-core';
 
 export const isBack = () =>
   Boolean(document.getElementById(consts.backIndicatorId));
 
-export const isBackAtom = atom(isBack());
+export const isBackSignal = signal(isBack());
 
-isBackAtom.onMount = (set) => {
-  window[consts.globalSetBack] = set;
-  return () => (window[consts.globalSetBack] = undefined);
-};
+window[consts.globalSetBack] = (value: boolean) => (isBackSignal.value = value);
