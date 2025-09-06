@@ -5,7 +5,7 @@ description: Anki deck packaging tool
 
 # Packager
 
-Packager is a command-line tool for packaging built Anki decks into `.apkg` files.
+Packager is a command-line tool for packaging source code of Anki template into `.apkg` files.
 
 ## Installation and Usage
 

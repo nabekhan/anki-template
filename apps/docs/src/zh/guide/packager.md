@@ -5,7 +5,7 @@ description: Anki 卡组打包工具
 
 # Packager
 
-Packager 是一个用于将构建的 Anki 卡组打包为 `.apkg` 文件的命令行工具。
+Packager 是一个用于将 Anki 模板源码打包为 `.apkg` 文件的命令行工具。
 
 ## 安装和使用
 
