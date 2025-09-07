@@ -14,7 +14,8 @@
     "tslib": "^2.3.0",
     "vite-plugin-singlefile": "^2.3.0",
     "@anki-eco/packager": "workspace:*",
-    "@anki-eco/shared": "workspace:*"
+    "@anki-eco/shared": "workspace:*",
+    "@anki-eco/dev-ui": "workspace:*"
   },
   "peerDependencies": {
     "vite": "*"

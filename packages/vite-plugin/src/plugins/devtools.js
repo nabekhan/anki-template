@@ -1,33 +1,15 @@
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
+
 /** @returns {import('vite').Plugin} */
 export const devtools = (props) => {
   return {
     name: '@anki-eco/devtools',
     apply: 'serve',
     async transformIndexHtml() {
-      const { consts } = await import('@anki-eco/shared');
-      const runtime = `
-const actionsContainer = document.createElement('div');
-actionsContainer.style = 'position:fixed; top:50vh;right:0;display:flex;flex-direction:column;';
-const front = document.createElement('button');
-front.textContent = 'Front';
-const back = document.createElement('button');
-back.textContent = 'Back';
-
-actionsContainer.appendChild(front);
-actionsContainer.appendChild(back);
-
-const setCardBack = (back) => {
-  if (window.${consts.globalSetBack}) {
-    ${consts.globalSetBack}(back);
-  }
-}
-
-front.onclick = ()=> setCardBack(false);
-back.onclick = ()=> setCardBack(true);
-
-document.body.appendChild(actionsContainer);
-`;
-      return [{ tag: 'script', injectTo: 'body', children: runtime }];
+      const entry = require.resolve('@anki-eco/dev-ui');
+      return [{ tag: 'script', injectTo: 'body', attrs: { src: entry } }];
     },
   };
 };
