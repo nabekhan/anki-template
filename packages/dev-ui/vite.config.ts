@@ -1,16 +1,13 @@
 /// <reference types='vitest' />
 import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
 import dts from 'vite-plugin-dts';
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 import * as path from 'path';
-import { type Plugin } from 'vite';
 
 export default defineConfig(() => ({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/packages/dev-ui',
   plugins: [
-    vue(),
     cssInjectedByJsPlugin() as Plugin[],
     dts({
       entryRoot: 'src',

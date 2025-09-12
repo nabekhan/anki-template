@@ -1,7 +1,9 @@
-import { createApp } from 'vue';
-import App from './app.vue';
+import { render, h } from 'preact';
+import { App } from './app.js';
+import { ensureContainer } from '@anki-eco/shared';
 
-const container = document.createElement('div');
-document.body.appendChild(container);
+const CONTAINER_ID = 'anki-eco-dev-ui-container';
 
-createApp(App).mount(container);
+
+const container = ensureContainer(CONTAINER_ID);
+render(h(App, {}), container);

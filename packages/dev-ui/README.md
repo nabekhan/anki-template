@@ -2,6 +2,6 @@
 
 This library was generated with [Nx](https://nx.dev).
 
-## Running unit tests
+## Building
 
-Run `nx test dev-ui` to execute the unit tests via [Vitest](https://vitest.dev/).
+Run `nx build dev-ui` to build the library.

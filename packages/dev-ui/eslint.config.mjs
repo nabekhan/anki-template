@@ -1,21 +1,22 @@
-import vue from 'eslint-plugin-vue';
 import baseConfig from '../../eslint.config.mjs';
 
 export default [
   ...baseConfig,
-  ...vue.configs['flat/recommended'],
   {
-    files: ['**/*.vue'],
-    languageOptions: {
-      parserOptions: {
-        parser: await import('@typescript-eslint/parser'),
-      },
-    },
-  },
-  {
-    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.vue'],
+    files: ['**/*.json'],
     rules: {
-      'vue/multi-word-component-names': 'off',
+      '@nx/dependency-checks': [
+        'error',
+        {
+          ignoredFiles: [
+            '{projectRoot}/eslint.config.{js,cjs,mjs,ts,cts,mts}',
+            '{projectRoot}/vite.config.{js,ts,mjs,mts}',
+          ],
+        },
+      ],
+    },
+    languageOptions: {
+      parser: await import('jsonc-eslint-parser'),
     },
   },
 ];
