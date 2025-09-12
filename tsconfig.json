@@ -26,6 +26,9 @@
     },
     {
       "path": "./packages/dev-ui"
+    },
+    {
+      "path": "./packages/extensions"
     }
   ]
 }
