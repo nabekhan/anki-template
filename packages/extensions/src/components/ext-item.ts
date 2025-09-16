@@ -33,22 +33,18 @@ class ExtItem extends LitElement {
       user-select: none;
       transition: transform 120ms ease, box-shadow 180ms ease,
         background-color 180ms ease, color 180ms ease;
-      font: 500 12px/1.2 system-ui, -apple-system, Segoe UI, Roboto,
-        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      font: 500 12px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+        Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
     }
 
     .btn:hover {
       transform: translateY(-1px);
-      box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.08),
-        0 10px 20px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 10px 20px rgba(0, 0, 0, 0.12);
     }
 
     .btn:active {
       transform: translateY(0);
-      box-shadow:
-        0 1px 2px rgba(0, 0, 0, 0.06),
-        0 6px 16px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 6px 16px rgba(0, 0, 0, 0.08);
     }
 
     .btn:focus-visible {
