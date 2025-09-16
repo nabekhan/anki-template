@@ -8,7 +8,7 @@ import '../components/ext-full-screen.js';
 import '../components/ext-container.js';
 
 @customElementOnce('ext-tldraw')
-class TldrawExt extends LitElement {
+export class TldrawExt extends LitElement {
   protected override render(): unknown {
     return html`
       <ext-item .icon=${PencilLine} @click=${this.onClick}> </ext-item>
