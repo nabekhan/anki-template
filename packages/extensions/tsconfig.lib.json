@@ -10,8 +10,12 @@
     "forceConsistentCasingInFileNames": true,
     "types": ["node", "vite/client"],
     "experimentalDecorators": true,
-    "useDefineForClassFields": false
+    "useDefineForClassFields": false,
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "jsx": "react-jsx"
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "references": []
 }

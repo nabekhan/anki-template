@@ -3,9 +3,11 @@ import { customElementOnce } from '../utils.js';
 import { html } from 'lit/static-html.js';
 import { PencilLine } from 'lucide-static';
 
-import '../components/ext-item.js';
-import '../components/ext-full-screen.js';
-import '../components/ext-container.js';
+import '@/components/ext-item.js';
+import '@/components/ext-full-screen.js';
+import '@/components/ext-container.js';
+import '@/features/tldraw';
+import { initTldraw } from '@/features/tldraw/index.js';
 
 @customElementOnce('ext-tldraw')
 export class TldrawExt extends LitElement {
@@ -16,7 +18,6 @@ export class TldrawExt extends LitElement {
   }
 
   private onClick() {
-    const el = document.createElement('ext-full-screen');
-    document.body.appendChild(el);
+    initTldraw();
   }
 }
