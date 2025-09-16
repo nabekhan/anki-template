@@ -1,4 +1,5 @@
 import { blobToBase64 } from '@/utils.js';
+import '@/components/ext-full-screen.js';
 import './element.js';
 import { toBlob } from 'html-to-image';
 import { imageDimensionsFromData } from 'image-dimensions';

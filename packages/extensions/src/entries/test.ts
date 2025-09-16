@@ -5,11 +5,9 @@ import { PencilLine } from 'lucide-static';
 
 import '@/components/ext-item.js';
 import '@/components/ext-container.js';
-import '@/features/tldraw';
-import { initTldraw } from '@/features/tldraw/index.js';
 
-@customElementOnce('ext-tldraw')
-export class TldrawExt extends LitElement {
+@customElementOnce('ext-test')
+export class TestExt extends LitElement {
   protected override render(): unknown {
     return html`
       <ext-item .icon=${PencilLine} @click=${this.onClick}> </ext-item>
@@ -17,8 +15,6 @@ export class TldrawExt extends LitElement {
   }
 
   private onClick() {
-    initTldraw();
+    // test
   }
 }
-
-export { initTldraw };
