@@ -1,8 +1,9 @@
-import { css, html, LitElement } from 'lit';
-import { customElementOnce } from '../utils.js';
+import { css, html, LitElement, unsafeCSS } from 'lit';
+import { customElementOnce, markAsUserInteractive } from '../utils.js';
 import { twStyle } from '../style.js';
 import { X } from 'lucide-static';
 import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
+import { CSS_VAR } from './bottom-bar-height.js';
 
 @customElementOnce('ext-full-screen')
 export class FullScreen extends LitElement {
@@ -15,9 +16,10 @@ export class FullScreen extends LitElement {
     css`
       :host {
         position: fixed;
-        inset: 0;
-        width: 100%;
-        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: calc(100dvh - var(${unsafeCSS(CSS_VAR)}));
         z-index: 1000;
       }
     `,
@@ -40,11 +42,36 @@ export class FullScreen extends LitElement {
             ${unsafeSVG(X)}
           </button>
         </div>
-
-        <div class="flex-1 overflow-auto">
+        <div class="flex-1 overflow-hidden">
           <slot></slot>
         </div>
       </div>
     `;
+  }
+
+  private globalStyle?: HTMLStyleElement;
+
+  override connectedCallback(): void {
+    super.connectedCallback();
+    markAsUserInteractive(this);
+
+    document.documentElement.scrollTop = 0;
+    this.globalStyle = document.createElement('style');
+    this.globalStyle.textContent = `
+      html {
+        overflow: hidden !important;
+      }
+
+      html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    `;
+    document.head.appendChild(this.globalStyle);
+  }
+
+  override disconnectedCallback(): void {
+    super.disconnectedCallback();
+    this.globalStyle?.remove();
   }
 }

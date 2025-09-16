@@ -1,7 +1,12 @@
-import { css, html, LitElement } from 'lit';
-import { customElementOnce } from '../utils.js';
+import { css, html, LitElement, unsafeCSS } from 'lit';
+import {
+  customElementOnce,
+  getAnkiClient,
+  markAsUserInteractive,
+} from '../utils.js';
 import { property } from 'lit/decorators.js';
 import { twStyle } from '../style.js';
+import { CSS_VAR } from './bottom-bar-height.js';
 
 @customElementOnce('ext-container')
 export class ExtContainer extends LitElement {
@@ -9,7 +14,11 @@ export class ExtContainer extends LitElement {
     type: String,
     reflect: true,
   })
-  public position: 'left' | 'right' | 'center' | 'static' = 'right';
+  public position: 'left' | 'right' | 'static' = ['iPad', 'iPhone'].includes(
+    getAnkiClient()
+  )
+    ? 'static'
+    : 'left';
 
   static override styles = [
     twStyle,
@@ -20,7 +29,8 @@ export class ExtContainer extends LitElement {
 
       :host(:not([position='static'])) {
         position: fixed;
-        bottom: 16px;
+        top: calc(100dvh - var(${unsafeCSS(CSS_VAR)}, 0px) - 16px);
+        transform: translateY(-100%);
         left: 0;
         right: 0;
         pointer-events: none;
@@ -35,12 +45,6 @@ export class ExtContainer extends LitElement {
         right: 16px;
         left: auto;
       }
-
-      :host([position='center']) {
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-      }
     `,
   ];
 
@@ -54,5 +58,10 @@ export class ExtContainer extends LitElement {
     >
       <slot></slot>
     </div>`;
+  }
+
+  override connectedCallback(): void {
+    super.connectedCallback();
+    markAsUserInteractive(this);
   }
 }

@@ -16,8 +16,19 @@ export class TldrawExt extends LitElement {
     `;
   }
 
+  closeCallbacks: (() => void)[] = [];
+
   private onClick() {
-    initTldraw();
+    initTldraw().then((close) => {
+      if (close) {
+        this.closeCallbacks.push(close);
+      }
+    });
+  }
+
+  override disconnectedCallback(): void {
+    super.disconnectedCallback();
+    this.closeCallbacks.forEach((close) => close());
   }
 }
 

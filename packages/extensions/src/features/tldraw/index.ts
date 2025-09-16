@@ -5,12 +5,16 @@ import { toBlob } from 'html-to-image';
 import { imageDimensionsFromData } from 'image-dimensions';
 
 export async function initTldraw() {
+  const extContainer = document.querySelector('ext-container');
   try {
     const qa = document.getElementById('qa');
     if (!qa) {
       throw new Error('QA element not found');
     }
 
+    if (extContainer && extContainer instanceof HTMLElement) {
+      extContainer.style.display = 'none';
+    }
     const png = await toBlob(qa);
     if (!png) {
       throw new Error('Failed to convert QA element to PNG');
@@ -32,7 +36,14 @@ export async function initTldraw() {
     tldraw.setAttribute('dataurl', await blobToBase64(png));
     el.appendChild(tldraw);
     document.body.appendChild(el);
+
+    return () => el.remove();
   } catch (error: any) {
     alert(`Error initializing Tldraw: ${error.message}`);
+    return undefined;
+  } finally {
+    if (extContainer && extContainer instanceof HTMLElement) {
+      extContainer.style.display = '';
+    }
   }
 }
