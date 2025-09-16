@@ -1,3 +1,13 @@
+## 1.1.1 (2025-09-16)
+
+### 🩹 Fixes
+
+- npm config ([d866948](https://github.com/ikkz/anki-eco/commit/d866948))
+
+### ❤️ Thank You
+
+- ikkz
+
 ## 1.1.0 (2025-09-16)
 
 ### 🚀 Features
