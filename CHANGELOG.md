@@ -1,3 +1,21 @@
+## 1.1.0 (2025-09-16)
+
+### 🚀 Features
+
+- dev ui ([d210d32](https://github.com/ikkz/anki-eco/commit/d210d32))
+- init lit ([9b89138](https://github.com/ikkz/anki-eco/commit/9b89138))
+- fullscreen ([aec62ac](https://github.com/ikkz/anki-eco/commit/aec62ac))
+- set png to tldraw ([8cf949e](https://github.com/ikkz/anki-eco/commit/8cf949e))
+
+### 🩹 Fixes
+
+- lockfile ([97877a4](https://github.com/ikkz/anki-eco/commit/97877a4))
+- multiple extensions ([33b8c44](https://github.com/ikkz/anki-eco/commit/33b8c44))
+
+### ❤️ Thank You
+
+- ikkz
+
 ## 1.0.8 (2025-09-05)
 
 ### 🚀 Features
