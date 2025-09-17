@@ -1,11 +1,10 @@
-import { css, html, LitElement, unsafeCSS } from 'lit';
+import { css, html, LitElement } from 'lit';
 import { customElementOnce, markAsUserInteractive } from '../utils.js';
 import { twStyle } from '../style.js';
 import { X } from 'lucide-static';
 import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
-import { CSS_VAR } from './bottom-bar-height.js';
 
-@customElementOnce('ext-full-screen')
+@customElementOnce('ae-full-screen')
 export class FullScreen extends LitElement {
   private handleClose = () => {
     this.remove();
@@ -19,7 +18,7 @@ export class FullScreen extends LitElement {
         top: 0;
         left: 0;
         right: 0;
-        height: calc(100dvh - var(${unsafeCSS(CSS_VAR)}));
+        height: 100dvh;
         z-index: 1000;
       }
     `,
@@ -65,6 +64,10 @@ export class FullScreen extends LitElement {
       html, body {
         margin: 0 !important;
         padding: 0 !important;
+      }
+
+      #qa {
+        display: none !important;
       }
     `;
     document.head.appendChild(this.globalStyle);

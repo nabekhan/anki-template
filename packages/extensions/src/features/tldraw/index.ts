@@ -1,21 +1,19 @@
 import { blobToBase64 } from '@/utils.js';
-import '@/components/ext-full-screen.js';
+import '@/components/full-screen.js';
 import './element.js';
 import { toBlob } from 'html-to-image';
 import { imageDimensionsFromData } from 'image-dimensions';
 
-export async function initTldraw() {
-  const extContainer = document.querySelector('ext-container');
+export async function initTldraw(selector: string) {
   try {
-    const qa = document.getElementById('qa');
-    if (!qa) {
+    const target = document.querySelector(selector);
+    if (!target || !(target instanceof HTMLElement)) {
       throw new Error('QA element not found');
     }
 
-    if (extContainer && extContainer instanceof HTMLElement) {
-      extContainer.style.display = 'none';
-    }
-    const png = await toBlob(qa);
+    const png = await toBlob(target, {
+      filter: (node) => !node.tagName?.startsWith('AE-'),
+    });
     if (!png) {
       throw new Error('Failed to convert QA element to PNG');
     }
@@ -29,7 +27,7 @@ export async function initTldraw() {
 
     const { width, height } = dim;
 
-    const el = document.createElement('ext-full-screen');
+    const el = document.createElement('ae-full-screen');
     const tldraw = document.createElement('tldraw-container');
     tldraw.setAttribute('width', width.toString());
     tldraw.setAttribute('height', height.toString());
@@ -41,9 +39,5 @@ export async function initTldraw() {
   } catch (error: any) {
     alert(`Error initializing Tldraw: ${error.message}`);
     return undefined;
-  } finally {
-    if (extContainer && extContainer instanceof HTMLElement) {
-      extContainer.style.display = '';
-    }
   }
 }

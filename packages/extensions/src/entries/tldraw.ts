@@ -1,35 +1,45 @@
-import { LitElement } from 'lit';
-import { customElementOnce } from '../utils.js';
+import { css, LitElement } from 'lit';
+import { customElementOnce, markAsUserInteractive } from '../utils.js';
 import { html } from 'lit/static-html.js';
-import { PencilLine } from 'lucide-static';
 
-import '@/components/ext-item.js';
-import '@/components/ext-container.js';
-import '@/features/tldraw';
 import { initTldraw } from '@/features/tldraw/index.js';
+import { property } from 'lit/decorators.js';
+import { buttonStyle } from '@/style.js';
 
-@customElementOnce('ext-tldraw')
+@customElementOnce('ae-tldraw')
 export class TldrawExt extends LitElement {
+  static override styles = [buttonStyle];
+
+  @property({ type: String })
+  selector = 'body';
+
   protected override render(): unknown {
-    return html`
-      <ext-item .icon=${PencilLine} @click=${this.onClick}> </ext-item>
-    `;
+    return html`<slot>Tldraw</slot>`;
   }
 
-  closeCallbacks: (() => void)[] = [];
+  override connectedCallback(): void {
+    super.connectedCallback();
 
-  private onClick() {
-    initTldraw().then((close) => {
-      if (close) {
-        this.closeCallbacks.push(close);
-      }
-    });
+    markAsUserInteractive(this);
+    this.addEventListener('click', this.onClick);
   }
 
   override disconnectedCallback(): void {
     super.disconnectedCallback();
-    this.closeCallbacks.forEach((close) => close());
+    this.removeEventListener('click', this.onClick);
+    this.closeCallback?.();
   }
+
+  closeCallback?: () => void;
+
+  private onClick = () => {
+    this.closeCallback?.();
+    initTldraw(this.selector).then((close) => {
+      if (close) {
+        this.closeCallback = close;
+      }
+    });
+  };
 }
 
 export { initTldraw };
