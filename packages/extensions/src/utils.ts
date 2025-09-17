@@ -1,4 +1,5 @@
 import { customElement } from 'lit/decorators.js';
+import { sendEvent } from '@anki-eco/analytics';
 
 export const customElementOnce: typeof customElement =
   (tagName) => (classOrTarget, context?: ClassDecoratorContext) => {
@@ -40,4 +41,12 @@ export function getAnkiClient() {
     return 'Android';
   }
   return 'Desktop';
+}
+
+export function track(extname: string, event: string) {
+  return sendEvent('anki-eco-ext', `/${extname}`, event);
+}
+
+export function pv(extname: string) {
+  return track(extname, 'pageview');
 }

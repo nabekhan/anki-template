@@ -1,5 +1,5 @@
-import { css, LitElement } from 'lit';
-import { customElementOnce, markAsUserInteractive } from '../utils.js';
+import { LitElement } from 'lit';
+import { customElementOnce, markAsUserInteractive, pv } from '../utils.js';
 import { html } from 'lit/static-html.js';
 
 import { initTldraw } from '@/features/tldraw/index.js';
@@ -20,6 +20,7 @@ export class TldrawExt extends LitElement {
   override connectedCallback(): void {
     super.connectedCallback();
 
+    pv('tldraw');
     markAsUserInteractive(this);
     this.addEventListener('click', this.onClick);
   }

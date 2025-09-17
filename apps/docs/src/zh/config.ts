@@ -4,7 +4,16 @@ export default defineAdditionalConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/zh/' },
-      { text: '指南', link: '/zh/guide/quick-start' },
+      {
+        text: '插件',
+        items: [
+          {
+            text: 'Tldraw',
+            link: '/zh/extension/tldraw',
+          },
+        ],
+      },
+      { text: '开发指南', link: '/zh/guide/quick-start' },
     ],
     sidebar: {
       '/zh/guide/': [

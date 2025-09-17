@@ -1,0 +1,26 @@
+---
+title: Tldraw
+description: Anki Tldraw 插件
+---
+
+# Tldraw
+
+[Tldraw](https://tldraw.com/) 是一个功能强大的画板工具，本插件实现了其和 Anki 的集成，实现复习时自由的在卡片上绘画。
+
+功能：
+
+- 可以在任何你喜欢的模板中安装，因此也支持 Anki 全平台
+- 自动将卡片内容截图至画板内，对于习惯在记忆时绘图、打草稿的用户非常实用
+- 所有 Tldraw 的功能，包括 Apple Pencil 支持
+
+
+## 安装
+
+打开 Anki 的卡片模板编辑器，在任何你喜欢的模板的尾部添加以下代码：
+
+```html
+<ae-tldraw></ae-tldraw>
+<script src="https://cdn.jsdelivr.net/npm/@anki-eco/extensions/dist/tldraw.js" defer></script>
+```
+
+在复习时就能看到一个按钮，点击后就能打开画板。该按钮只包括基础样式，你可以按自己的喜好设置它的 css。

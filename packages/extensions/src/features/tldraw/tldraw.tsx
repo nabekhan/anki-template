@@ -42,6 +42,7 @@ export const App: FC<{ dataUrl: string; width: number; height: number }> = ({
     });
 
     editor.zoomToFit();
+    editor.setCurrentTool('hand');
   };
 
   return <Tldraw onMount={onMount} />;

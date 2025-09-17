@@ -1,10 +1,11 @@
-import { blobToBase64 } from '@/utils.js';
+import { blobToBase64, track } from '@/utils.js';
 import '@/components/full-screen.js';
 import './element.js';
 import { toBlob } from 'html-to-image';
 import { imageDimensionsFromData } from 'image-dimensions';
 
 export async function initTldraw(selector: string) {
+  track('tldraw', 'showTldraw');
   try {
     const target = document.querySelector(selector);
     if (!target || !(target instanceof HTMLElement)) {

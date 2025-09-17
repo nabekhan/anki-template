@@ -7,8 +7,4 @@ export class TestExt extends LitElement {
   protected override render(): unknown {
     return html` <button><slot></slot></button> `;
   }
-
-  private onClick() {
-    // test
-  }
 }

@@ -11,7 +11,16 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide/packager' },
+      {
+        text: 'Extension',
+        items: [
+          {
+            text: 'Tldraw',
+            link: '/extension/tldraw',
+          },
+        ],
+      },
+      { text: 'Dev Guide', link: '/guide/packager' },
     ],
 
     sidebar: {
@@ -44,4 +53,15 @@ export default defineConfig({
       lang: 'zh',
     },
   },
+
+  head: [
+    [
+      'script',
+      {
+        defer: '',
+        'data-domain': 'anki-eco',
+        src: 'https://pla.ikkz.fun/js/script.js',
+      },
+    ],
+  ],
 });

@@ -8,16 +8,17 @@ hero:
   # tagline: My great project tagline
   actions:
     - theme: brand
-      text: Guide
+      text: Extensions
+      link: /extension/tldraw
+    - theme: alt
+      text: Dev Guide
       link: /guide/quick-start
-    # - theme: alt
-    #   text: API Examples
-    #   link: /api-examples
-# features:
-#   - title: Feature A
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-#   - title: Feature B
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+features:
+  - title: Tldraw Integration
+    details: Draw freely on cards during review
+    link: /extension/tldraw
+  - title: Todo
+    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 #   - title: Feature C
 #     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---

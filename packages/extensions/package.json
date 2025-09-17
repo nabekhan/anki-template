@@ -25,7 +25,8 @@
     "lucide-static": "^0.544.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "tldraw": "^3.15.4"
+    "tldraw": "^3.15.4",
+    "@anki-eco/analytics": "workspace:*"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
