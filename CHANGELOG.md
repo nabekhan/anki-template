@@ -1,3 +1,20 @@
+## 1.1.4 (2025-09-17)
+
+### 🚀 Features
+
+- simplify entry ([55fa58d](https://github.com/ikkz/anki-eco/commit/55fa58d))
+- docs ([96568b0](https://github.com/ikkz/anki-eco/commit/96568b0))
+- add docs ([816ebe2](https://github.com/ikkz/anki-eco/commit/816ebe2))
+
+### 🩹 Fixes
+
+- apple screen ([45b9c8b](https://github.com/ikkz/anki-eco/commit/45b9c8b))
+- add wrangler ([80b84d5](https://github.com/ikkz/anki-eco/commit/80b84d5))
+
+### ❤️ Thank You
+
+- ikkz
+
 ## 1.1.3 (2025-09-16)
 
 ### 🩹 Fixes

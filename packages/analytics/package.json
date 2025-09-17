@@ -1,6 +1,6 @@
 {
   "name": "@anki-eco/analytics",
-  "version": "0.0.1",
+  "version": "1.1.4",
   "private": true,
   "type": "module",
   "main": "./dist/index.js",
