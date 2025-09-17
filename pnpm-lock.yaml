@@ -129,6 +129,9 @@ importers:
       vue-tsc:
         specifier: ^2.2.8
         version: 2.2.12(typescript@5.8.3)
+      wrangler:
+        specifier: ^3.107.3
+        version: 3.114.14
 
   apps/docs:
     devDependencies:
