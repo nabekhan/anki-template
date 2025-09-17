@@ -29,6 +29,8 @@ export async function initTldraw(selector: string) {
     const { width, height } = dim;
 
     const el = document.createElement('ae-full-screen');
+    el.setAttribute('docs', 'https://anki.ikkz.fun/extension/tldraw.html');
+
     const tldraw = document.createElement('tldraw-container');
     tldraw.setAttribute('width', width.toString());
     tldraw.setAttribute('height', height.toString());

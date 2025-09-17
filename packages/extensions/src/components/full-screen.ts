@@ -1,11 +1,14 @@
 import { css, html, LitElement } from 'lit';
+import { property } from 'lit/decorators.js';
 import { customElementOnce, markAsUserInteractive } from '../utils.js';
 import { twStyle } from '../style.js';
-import { X } from 'lucide-static';
+import { X, BadgeQuestionMark } from 'lucide-static';
 import '@/components/icon-button.js';
 
 @customElementOnce('ae-full-screen')
 export class FullScreen extends LitElement {
+  @property({ type: String }) docs?: string;
+
   private handleClose = () => {
     this.remove();
   };
@@ -31,6 +34,22 @@ export class FullScreen extends LitElement {
           part="toolbar"
           class="h-10 flex items-center justify-end gap-2 px-3 border-b border-black/5 bg-white/80 backdrop-blur sticky top-0 z-[1] dark:bg-gray-900/80 dark:border-white/10"
         >
+          ${this.docs
+            ? html`<a
+                part="docs-link"
+                class="inline-flex"
+                href=${this.docs}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open docs"
+              >
+                <ae-icon-button
+                  part="docs-button"
+                  aria-label="Open docs"
+                  .icon=${BadgeQuestionMark}
+                ></ae-icon-button>
+              </a>`
+            : null}
           <ae-icon-button
             part="close-button"
             aria-label="Close"

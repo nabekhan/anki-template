@@ -23,3 +23,7 @@ Open Anki’s card template editor and add the following to the end of any templ
 ```
 
 During review, you’ll see a button; click it to open the canvas. The button only includes basic styles — feel free to customize its CSS.
+
+## Feedback
+
+If you have any questions or suggestions, please submit them on [GitHub](https://github.com/ikkz/anki-eco/issues).

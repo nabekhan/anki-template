@@ -1,5 +1,13 @@
 {
   "name": "@anki-eco/packager",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikkz/anki-eco.git"
+  },
+  "homepage": "https://anki.ikkz.fun",
+  "bugs": {
+    "url": "https://github.com/ikkz/anki-eco/issues"
+  },
   "bin": {
     "@anki-eco/packager": "./bin/packager.js",
     "_assign_perm": "./dist/anki-eco-packager"

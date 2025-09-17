@@ -24,3 +24,7 @@ description: Anki Tldraw 插件
 ```
 
 在复习时就能看到一个按钮，点击后就能打开画板。该按钮只包括基础样式，你可以按自己的喜好设置它的 css。
+
+## 反馈
+
+如果你有任何问题或建议，请在 [GitHub](https://github.com/ikkz/anki-eco/issues) 上提交。
