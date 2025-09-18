@@ -1,3 +1,13 @@
+## 1.1.5 (2025-09-18)
+
+### 🩹 Fixes
+
+- ios style ([e1d16df](https://github.com/ikkz/anki-eco/commit/e1d16df))
+
+### ❤️ Thank You
+
+- ikkz
+
 ## 1.1.4 (2025-09-17)
 
 ### 🚀 Features
