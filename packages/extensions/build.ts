@@ -23,12 +23,6 @@ for (const entry of entries) {
       commonjsOptions: {
         transformMixedEsModules: true,
       },
-      terserOptions: {
-        compress: {
-          drop_console: true,
-          drop_debugger: true,
-        },
-      },
       lib: {
         entry: `./src/entries/${entry}.ts`,
         name: `AnkiEcoExtension_${entry}`,

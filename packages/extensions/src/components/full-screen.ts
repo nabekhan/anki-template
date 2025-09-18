@@ -1,6 +1,6 @@
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
-import { customElementOnce, markAsUserInteractive } from '../utils.js';
+import { customElementOnce, getAnkiClient, markInteractive } from '../utils.js';
 import { twStyle } from '../style.js';
 import { X, BadgeQuestionMark } from 'lucide-static';
 import '@/components/icon-button.js';
@@ -8,6 +8,10 @@ import '@/components/icon-button.js';
 @customElementOnce('ae-full-screen')
 export class FullScreen extends LitElement {
   @property({ type: String }) docs?: string;
+
+  @property({ type: String, reflect: true }) client: ReturnType<
+    typeof getAnkiClient
+  > = getAnkiClient();
 
   private handleClose = () => {
     this.remove();
@@ -18,11 +22,13 @@ export class FullScreen extends LitElement {
     css`
       :host {
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 100dvh;
+        inset: 0;
         z-index: 1000;
+      }
+
+      :host([client^='iP']) {
+        bottom: auto;
+        height: 100dvh;
       }
     `,
   ];
@@ -68,7 +74,7 @@ export class FullScreen extends LitElement {
 
   override connectedCallback(): void {
     super.connectedCallback();
-    markAsUserInteractive(this);
+    markInteractive(this);
 
     document.documentElement.scrollTop = 0;
     this.globalStyle = document.createElement('style');

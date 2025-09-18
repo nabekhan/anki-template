@@ -7,9 +7,9 @@ export const twStyle = css`
 
 export const buttonStyle = css`
   :host {
-    font-size: 0.8em;
+    font-size: 12px;
     display: inline-block;
-    padding: 0.3em 0.6em;
+    padding: 3px 6px;
     border: none;
     border-radius: 0.2em;
     background: #e0e0e0;

@@ -27,7 +27,7 @@ export function blobToBase64(blob: Blob) {
   });
 }
 
-export function markAsUserInteractive(element: HTMLElement) {
+export function markInteractive(element: HTMLElement) {
   element.classList.add('tappable');
 }
 
@@ -43,10 +43,35 @@ export function getAnkiClient() {
   return 'Desktop';
 }
 
-export function track(extname: string, event: string) {
-  return sendEvent('anki-eco-ext', `/${extname}`, event);
+export function track(
+  pathname: string,
+  event: string,
+  props?: Record<string, any>
+) {
+  return sendEvent('anki-eco-ext', pathname, event, props);
 }
 
-export function pv(extname: string) {
-  return track(extname, 'pageview');
+export function pv(pathname: string) {
+  return track(pathname, 'pageview');
+}
+
+declare global {
+  interface Console {
+    patched?: boolean;
+  }
+}
+
+export function patchConsole() {
+  const originalConsole = window.console;
+  if (originalConsole.patched) return;
+
+  window.console = new Proxy(originalConsole, {
+    get(target, prop, receiver) {
+      if (Reflect.has(target, prop)) {
+        return Reflect.get(target, prop, receiver);
+      }
+      return Reflect.get(target, 'log', receiver);
+    },
+  });
+  window.console.patched = true;
 }

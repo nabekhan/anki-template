@@ -1,20 +1,48 @@
-import { blobToBase64, track } from '@/utils.js';
+import { blobToBase64, pv } from '@/utils.js';
 import '@/components/full-screen.js';
 import './element.js';
 import { toBlob } from 'html-to-image';
 import { imageDimensionsFromData } from 'image-dimensions';
+import html2canvas from 'html2canvas';
 
-export async function initTldraw(selector: string) {
-  track('tldraw', 'showTldraw');
+export type ScreenShotType = 'html2canvas' | 'html-to-image';
+
+export async function initTldraw(
+  selector = '#qa',
+  screenshot: ScreenShotType = 'html2canvas'
+) {
+  pv('/tldraw/show');
   try {
     const target = document.querySelector(selector);
     if (!target || !(target instanceof HTMLElement)) {
       throw new Error('QA element not found');
     }
 
-    const png = await toBlob(target, {
-      filter: (node) => !node.tagName?.startsWith('AE-'),
-    });
+    let png: Blob | null;
+
+    if (screenshot === 'html-to-image') {
+      png = await toBlob(target, {
+        filter: (node) => !node.tagName?.startsWith('AE-'),
+      });
+    } else {
+      const canvas: HTMLCanvasElement = await (
+        html2canvas as unknown as typeof import('html2canvas').default
+      )(target, {
+        backgroundColor: null,
+        ignoreElements: (node) => node.tagName?.startsWith('AE-'),
+      });
+
+      png = await new Promise<Blob>((resolve, reject) => {
+        canvas.toBlob((blob) => {
+          if (!blob) {
+            reject(new Error('Failed to convert canvas to blob'));
+          } else {
+            resolve(blob);
+          }
+        });
+      });
+    }
+
     if (!png) {
       throw new Error('Failed to convert QA element to PNG');
     }

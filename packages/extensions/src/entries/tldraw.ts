@@ -1,8 +1,15 @@
+patchConsole();
+
 import { LitElement } from 'lit';
-import { customElementOnce, markAsUserInteractive, pv } from '../utils.js';
+import {
+  customElementOnce,
+  markInteractive,
+  patchConsole,
+  pv,
+} from '../utils.js';
 import { html } from 'lit/static-html.js';
 
-import { initTldraw } from '@/features/tldraw/index.js';
+import { initTldraw, ScreenShotType } from '@/features/tldraw/index.js';
 import { property } from 'lit/decorators.js';
 import { buttonStyle } from '@/style.js';
 
@@ -11,7 +18,10 @@ export class TldrawExt extends LitElement {
   static override styles = [buttonStyle];
 
   @property({ type: String })
-  selector = 'body';
+  selector = '#qa';
+
+  @property({ type: String })
+  screenshot: ScreenShotType = 'html2canvas';
 
   protected override render(): unknown {
     return html`<slot>Tldraw</slot>`;
@@ -20,8 +30,8 @@ export class TldrawExt extends LitElement {
   override connectedCallback(): void {
     super.connectedCallback();
 
-    pv('tldraw');
-    markAsUserInteractive(this);
+    pv('/tldraw/button');
+    markInteractive(this);
     this.addEventListener('click', this.onClick);
   }
 
@@ -35,7 +45,7 @@ export class TldrawExt extends LitElement {
 
   private onClick = () => {
     this.closeCallback?.();
-    initTldraw(this.selector).then((close) => {
+    initTldraw(this.selector, this.screenshot).then((close) => {
       if (close) {
         this.closeCallback = close;
       }

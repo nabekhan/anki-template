@@ -5,7 +5,7 @@ description: Anki Tldraw 插件
 
 # Tldraw
 
-[Tldraw](https://tldraw.com/) 是一个功能强大的画板工具，本插件实现了其和 Anki 的集成，实现复习时自由的在卡片上绘画。
+[Tldraw](https://tldraw.com/) 是一个功能强大的画板工具，本插件实现了其和 Anki 的集成，实现复习时自由的在卡片上绘画
 
 功能：
 
@@ -23,8 +23,28 @@ description: Anki Tldraw 插件
 <script src="https://cdn.jsdelivr.net/npm/@anki-eco/extensions/dist/tldraw.js" defer></script>
 ```
 
-在复习时就能看到一个按钮，点击后就能打开画板。该按钮只包括基础样式，你可以按自己的喜好设置它的 css。
+在复习时就能看到一个按钮，点击后就能打开画板。该按钮只包括基础样式，你可以按自己的喜好设置它的 css
+
+::: warning
+请在 Anki 设置中禁用滑动手势控制，否则会和画板操作冲突
+:::
+
+## 自定义
+
+支持通过 HTML 属性配置实现自定义。例如
+
+```html
+<ae-tldraw selector="#qa" screenshot="html2canvas">Tldraw</ae-tldraw>
+```
+
+### selector
+
+指定截图至画板的元素选择器，默认是 `#qa`
+
+### screenshot
+
+指定截图至画板的方式，默认是 `html2canvas`，如果使用中遇到截图布局异常等可切换至 `html-to-image`
 
 ## 反馈
 
-如果你有任何问题或建议，请在 [GitHub](https://github.com/ikkz/anki-eco/issues) 上提交。
+如果你有任何问题或建议，请在 [GitHub](https://github.com/ikkz/anki-eco/issues) 上提交
