@@ -83,6 +83,7 @@
     "react-dom": "^18.3.1",
     "react-error-boundary": "^4.1.1",
     "react-use": "^17.5.1",
-    "remeda": "^2.12.0"
+    "remeda": "^2.12.0",
+    "@anki-eco/analytics": "workspace:*"
   }
 }

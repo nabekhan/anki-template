@@ -272,6 +272,9 @@ importers:
 
   templates/classic:
     dependencies:
+      '@anki-eco/analytics':
+        specifier: workspace:*
+        version: link:../../packages/analytics
       '@bytemd/plugin-breaks':
         specifier: ^1.21.0
         version: 1.22.0(bytemd@1.22.0)

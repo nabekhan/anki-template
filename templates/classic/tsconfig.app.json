@@ -7,5 +7,13 @@
     },
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src", "playground/src"]
+  "include": [
+    "src",
+    "playground/src"
+  ],
+  "references": [
+    {
+      "path": "../../packages/analytics/tsconfig.lib.json"
+    }
+  ]
 }
