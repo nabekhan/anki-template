@@ -9,7 +9,6 @@
     "lint": "pnpm eslint .",
     "format": "pnpm eslint --fix .",
     "package": "uv run --frozen build/package.py",
-    "typecheck": "tsc --build --noEmit",
     "test": "nx vite:test -- run"
   },
   "author": "",
