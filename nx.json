@@ -20,6 +20,7 @@
       "dependsOn": ["build"]
     },
     "build": {
+      "dependsOn": ["^build"],
       "cache": true
     },
     "test": {
