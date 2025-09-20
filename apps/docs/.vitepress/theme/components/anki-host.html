@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anki Preview Host</title>
+    <style>
+      html, body { height: 100%; margin: 0; padding: 0; }
+      #qa { min-height: 100%; }
+    </style>
+  </head>
+  <body>
+    <div id="qa"></div>
+    <script>
+      const container = document.getElementById('qa');
+      window.e2eAnki = {
+        render: (html) => {
+          container.innerHTML = html;
+          // execute inline scripts inside injected HTML
+          for (const script of container.querySelectorAll('script')) {
+            const newScript = document.createElement('script');
+            if (script.src) {
+              newScript.src = script.src;
+            } else {
+              newScript.textContent = script.textContent;
+            }
+            script.replaceWith(newScript);
+          }
+        },
+        flipToBack: () => {},
+        clean: () => { container.innerHTML = ''; },
+      };
+    </script>
+  </body>
+  </html>
+

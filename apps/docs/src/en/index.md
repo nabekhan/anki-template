@@ -11,14 +11,15 @@ hero:
       text: Extensions
       link: /extension/tldraw
     - theme: alt
-      text: Dev Guide
-      link: /guide/quick-start
+      text: Templates
+      link: /templates/classic/
 features:
   - title: Tldraw Integration
-    details: Draw freely on cards during review
+    details: Draw freely on cards during review; integrates with any template you use
     link: /extension/tldraw
-  - title: Todo
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Classic Templates
+    details: Interactive templates (MCQ, TF, Basic, Match, Cloze, Input) with preview & download
+    link: /templates/classic/
 #   - title: Feature C
 #     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redirecting…</title>
+    <style>
+      html, body { height: 100%; margin: 0; }
+      body { display: grid; place-items: center; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color: #111; }
+      .box { max-width: 720px; padding: 24px; }
+      .muted { color: #666; font-size: 14px; }
+      a { color: #0b63f6; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      code { background: #f5f5f5; padding: 2px 6px; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1>Redirecting…</h1>
+      <p class="muted" id="msg">Taking you to the new docs site.</p>
+      <p class="muted">If you are not redirected automatically, <a id="link" href="#">click here</a>.</p>
+    </div>
+    <script>
+      (function() {
+        const params = new URLSearchParams(location.search);
+        const tpl = params.get('template') || '';
+        // Expect format: entry.locale.field, we only care entry + locale
+        const parts = tpl.split('.');
+        const entry = (parts[0] || '').toLowerCase();
+        const locale = (parts[1] || '').toLowerCase();
+        const isZh = locale === 'zh';
+        const base = 'https://anki.ikkz.fun';
+        // If no entry, send to overview
+        const path = entry
+          ? `${isZh ? '/zh' : ''}/templates/classic/${entry}.html`
+          : `${isZh ? '/zh' : ''}/templates/classic/`;
+        const url = base + path;
+        document.getElementById('link').setAttribute('href', url);
+        document.getElementById('msg').textContent = `Taking you to ${url}`;
+        window.location.replace(url);
+      })();
+    </script>
+  </body>
+  </html>

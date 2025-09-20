@@ -135,6 +135,18 @@ importers:
 
   apps/docs:
     devDependencies:
+      '@anki-eco/classic-templates':
+        specifier: workspace:*
+        version: link:../../templates/classic
+      autoprefixer:
+        specifier: ^10.4.20
+        version: 10.4.21(postcss@8.5.6)
+      postcss:
+        specifier: ^8.5.1
+        version: 8.5.6
+      tailwindcss:
+        specifier: '3'
+        version: 3.4.17
       vitepress:
         specifier: 2.0.0-alpha.12
         version: 2.0.0-alpha.12(@types/node@22.18.0)(axios@1.11.0)(jiti@2.4.2)(postcss@8.5.6)(terser@5.44.0)(typescript@5.8.3)(yaml@2.8.1)

@@ -11,12 +11,13 @@ hero:
       text: 插件
       link: /zh/extension/tldraw
     - theme: alt
-      text: 开发指南
-      link: /zh/guide/quick-start
+      text: 模板
+      link: /zh/templates/classic/
 features:
   - title: Tldraw 集成
-    details: 复习时自由的在卡片上绘画
+    details: 复习时自由的在卡片上绘画，可与你正在使用的任何模板集成
     link: /zh/extension/tldraw
-  - title: 待办
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Classic 模板
+    details: 交互式模板（多项选择、正误题、基础问答、匹配、填空、输入），支持在线预览与下载
+    link: /zh/templates/classic/
 ---

@@ -12,6 +12,26 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       {
+        text: 'Templates',
+        items: [
+          { text: 'Overview', link: '/templates/classic/' },
+          { text: 'Multiple Choice', link: '/templates/classic/mcq' },
+          { text: 'True or False', link: '/templates/classic/tf' },
+          { text: 'Basic', link: '/templates/classic/basic' },
+          { text: 'Match', link: '/templates/classic/match' },
+          { text: 'Cloze', link: '/templates/classic/cloze' },
+          { text: 'Input', link: '/templates/classic/input' },
+          {
+            text: 'Multiple Choice (10 options)',
+            link: '/templates/classic/mcq_10',
+          },
+          {
+            text: 'Multiple Choice (26 options)',
+            link: '/templates/classic/mcq_26',
+          },
+        ],
+      },
+      {
         text: 'Extension',
         items: [
           {

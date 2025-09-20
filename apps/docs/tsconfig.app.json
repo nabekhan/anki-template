@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "lib": ["ESNext", "DOM"],
     "outDir": "dist",
     "types": ["vite/client"],
     "rootDir": ".",
@@ -36,6 +37,8 @@
     "src/**/*.jsx",
     "src/**/*.ts",
     "src/**/*.mts",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "types.d.ts",
+    "env.d.ts"
   ]
 }
