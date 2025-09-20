@@ -48,7 +48,7 @@ function fallbackRender({ error }: FallbackProps) {
   );
 }
 
-if (!isBack()) {
+if (!isBack() && !window.e2eAnki) {
   setTimeout(() => {
     sendEvent('anki-eco-classic', `/${entry}`, 'pageview', {
       locale,
