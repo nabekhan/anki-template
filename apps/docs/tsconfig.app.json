@@ -40,5 +40,10 @@
     "src/**/*.vue",
     "types.d.ts",
     "env.d.ts"
+  ],
+  "references": [
+    {
+      "path": "../../templates/classic/tsconfig.app.json"
+    }
   ]
 }

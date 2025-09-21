@@ -1,4 +1,3 @@
-import { version } from '../../package.json';
 import { entry, locale } from 'at/options';
 import clsx from 'clsx';
 import { memo, useEffect, useState } from 'react';
@@ -6,20 +5,16 @@ import { memo, useEffect, useState } from 'react';
 export const EnAbout = () => (
   <div className={clsx('prose prose-sm', 'dark:prose-invert')}>
     <p>
-      Docs of this template:{' '}
-      <a href={`https://template.ikkz.fun/docs/${entry}`}>click here</a>
+      Docs & updates for this template:{' '}
+      <a href={`https://anki.ikkz.fun/templates/classic/${entry}.html`}>
+        View docs/updates
+      </a>
     </p>
     <p>
-      <em>
-        Tip: You can hide this About section by setting the{' '}
-        <code>window.atHideAboutByDefault = true</code> in the template.
-      </em>
-    </p>
-    <p>
-      Thank you for using my carefully crafted Anki template! The best way to
-      support me is giving me a star at{' '}
-      <a href="https://github.com/ikkz/anki-template">github</a>, or consider
-      sponsoring me
+      Thanks for using my carefully crafted Anki template! The best way to
+      support my work is to star it on{' '}
+      <a href="https://github.com/ikkz/anki-eco">GitHub</a>, or consider
+      sponsoring me on
       <a href="https://ko-fi.com/M4M212WUCI" target="_blank" rel="noreferrer">
         <img
           height="36"
@@ -31,54 +26,37 @@ export const EnAbout = () => (
     </p>
 
     <p>
-      You can find all the templates I&apos;ve created{' '}
-      <a href="https://template.ikkz.fun/?from=anki">here</a>.
+      Explore all my templates <a href="https://anki.ikkz.fun/">here</a>.
     </p>
 
     <p>
-      For suggestions and feedback, please submit them{' '}
-      <a href="https://github.com/ikkz/anki-template/issues">here</a>.
+      Have suggestions or feedback? Open an issue{' '}
+      <a href="https://github.com/ikkz/anki-eco/issues">here</a>.
     </p>
-
-    <blockquote>
-      Current version: {version},{' '}
-      <a href="https://template.ikkz.fun/?from=anki">check</a> update
-    </blockquote>
   </div>
 );
 
 export const ZhAbout = () => (
   <div className={clsx('prose prose-sm', 'dark:prose-invert')}>
     <p>
-      本模板使用文档:{' '}
-      <a href={`https://template.ikkz.fun/docs/${entry}`}>点击此处</a>
+      本模板的文档与更新：{' '}
+      <a href={`https://anki.ikkz.fun/templates/classic/${entry}.html`}>
+        点击此处
+      </a>
     </p>
     <p>
-      <em>
-        提示: 您可以通过在模板中设置{' '}
-        <code>window.atHideAboutByDefault = true</code> 来隐藏这个 About 区域。
-      </em>
+      感谢你使用我精心打磨的 Anki 模板！支持我的最佳方式是在{' '}
+      <a href="https://github.com/ikkz/anki-eco">GitHub</a> 点个 Star，或在{' '}
+      <a href="https://afdian.com/a/leoly">爱发电</a> 赞助我 ❤️
     </p>
     <p>
-      感谢您使用我精心制作的 Anki 模板！ 支持我的最好方式是在{' '}
-      <a href="https://github.com/ikkz/anki-template">github</a> 为我点一颗
-      star，或者可以考虑在 <a href="https://afdian.com/a/leoly">这里</a> 赞助我
-      ❤️
-    </p>
-    <p>
-      您可以在 <a href="https://template.ikkz.fun/?from=anki">这里</a>{' '}
-      找到我创建的所有模板
+      你可以在 <a href="https://anki.ikkz.fun/">这里</a> 浏览我制作的所有模板。
     </p>
 
     <p>
-      对于建议和反馈，请在{' '}
-      <a href="https://github.com/ikkz/anki-template/issues">这里</a> 提交
+      如果有建议或反馈，请在{' '}
+      <a href="https://github.com/ikkz/anki-eco/issues">这里</a> 提交 Issue。
     </p>
-
-    <blockquote>
-      当前版本： {version}，{' '}
-      <a href="https://template.ikkz.fun/?from=anki">检查</a>更新
-    </blockquote>
   </div>
 );
 

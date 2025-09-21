@@ -161,10 +161,13 @@ watch([variantKey], () => {
 onMounted(() => {
   loadAndRender();
 });
+
+const version = CLASSIC_VERSION;
 </script>
 
 <template>
   <div class="tw-space-y-3 tw-mt-2">
+    <div>Latest version: {{ version }}</div>
     <div class="tw-flex tw-items-center tw-gap-3 tw-text-sm tw-text-gray-700">
       <div class="tw-relative">
         <select

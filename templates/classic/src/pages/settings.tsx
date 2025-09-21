@@ -8,7 +8,6 @@ import {
   blurOptionsAtom,
   caseSensitiveAtom,
   clozeAtom,
-  hideAboutAtom,
   hideMcqAnswerAtom,
   hideQuestionTypeAtom,
   hideTimerAtom,
@@ -25,7 +24,6 @@ import { FC } from 'react';
 
 const CommonOptions: FC = () => {
   const [selectionMenu, setSelectionMenu] = useAtom(selectionMenuAtom);
-  const [hideAbout, setHideAbout] = useAtom(hideAboutAtom);
   const [biggerText, setBiggerText] = useAtom(biggerTextAtom);
   const [hideTimer, setHideTimer] = useAtom(hideTimerAtom);
   const [noScorll, setNoScorll] = useAtom(noScrollAtom);
@@ -77,12 +75,6 @@ const CommonOptions: FC = () => {
         checked={hideTimer}
         onChange={setHideTimer}
         data-testid="setting:hideTimer"
-      />
-      <Checkbox
-        title={t.hideAbout}
-        checked={hideAbout}
-        onChange={setHideAbout}
-        data-testid="setting:hideAbout"
       />
     </>
   );

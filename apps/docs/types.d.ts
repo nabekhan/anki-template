@@ -8,3 +8,5 @@ declare module '*.vue' {
   const component: ReturnType<typeof defineComponent>;
   export default component;
 }
+
+declare const CLASSIC_VERSION: string;

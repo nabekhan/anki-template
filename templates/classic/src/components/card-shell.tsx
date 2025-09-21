@@ -1,4 +1,3 @@
-import { About } from './about';
 import { Block } from './block';
 import { Button } from './button';
 import { Dot } from './dot';
@@ -8,7 +7,7 @@ import { useBack } from '@/hooks/use-back';
 import { useField } from '@/hooks/use-field';
 import { Page, PageContext } from '@/hooks/use-page';
 import { DEFAULT_PAGES } from '@/pages';
-import { biggerTextAtom, hideAboutAtom, noScrollAtom } from '@/store/settings';
+import { biggerTextAtom, noScrollAtom } from '@/store/settings';
 import { IS_DEV } from '@/utils/const';
 import * as t from 'at/i18n';
 import { entry, locale } from 'at/options';
@@ -33,7 +32,6 @@ export const CardShell: FC<Props> = ({
   answerTitle = t.answer,
   answer,
 }) => {
-  const prefHideAbout = useAtomValue(hideAboutAtom);
   const prefBiggerText = useAtomValue(biggerTextAtom);
   const prefNoScroll = useAtomValue(noScrollAtom);
   const [back, setBack] = useBack();
@@ -99,11 +97,6 @@ export const CardShell: FC<Props> = ({
             </Block>
           ) : null}
           <TimerBlock />
-          {prefHideAbout ? null : (
-            <Block name={t.about}>
-              <About />
-            </Block>
-          )}
         </div>
       </PageContext.Provider>
       {IS_DEV ? (

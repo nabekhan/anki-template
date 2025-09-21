@@ -1,5 +1,13 @@
 import { defineConfig } from 'vitepress';
 
+const {
+  default: { version: classicVersion },
+} = await import('@anki-eco/classic-templates/package.json', {
+  with: {
+    type: 'json',
+  },
+});
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   srcDir: 'src',
@@ -66,8 +74,14 @@ export default defineConfig({
             { text: 'Match', link: '/templates/classic/match' },
             { text: 'Cloze', link: '/templates/classic/cloze' },
             { text: 'Input', link: '/templates/classic/input' },
-            { text: 'Multiple Choice (10 options)', link: '/templates/classic/mcq_10' },
-            { text: 'Multiple Choice (26 options)', link: '/templates/classic/mcq_26' },
+            {
+              text: 'Multiple Choice (10 options)',
+              link: '/templates/classic/mcq_10',
+            },
+            {
+              text: 'Multiple Choice (26 options)',
+              link: '/templates/classic/mcq_26',
+            },
           ],
         },
       ],
@@ -100,4 +114,10 @@ export default defineConfig({
       },
     ],
   ],
+
+  vite: {
+    define: {
+      CLASSIC_VERSION: JSON.stringify(classicVersion.toString()),
+    },
+  },
 });

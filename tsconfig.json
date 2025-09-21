@@ -32,6 +32,9 @@
     },
     {
       "path": "./packages/analytics"
+    },
+    {
+      "path": "./templates/classic"
     }
   ]
 }
