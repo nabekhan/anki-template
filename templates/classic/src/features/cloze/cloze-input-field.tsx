@@ -204,6 +204,8 @@ export const ClozeInputField: FC<
       });
       setReports(reports);
     }
+
+    return;
   }, [back]);
 
   useEffect(() => {

@@ -39,6 +39,7 @@ export const Markdown: FC<{
       return processer.processSync(value);
     } catch (error) {
       console.log(error);
+      return;
     }
   }, [value, processer]);
 

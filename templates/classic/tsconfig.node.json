@@ -7,9 +7,12 @@
     "vitest.config.ts"
   ],
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
-    "noEmit": true
+    "module": "es2022",
+    "moduleResolution": "bundler",
+    "sourceMap": false,
+    "outDir": "dist-types",
+    "tsBuildInfoFile": "dist-types/tsconfig.node.tsbuildinfo"
   }
 }

@@ -1,20 +1,23 @@
 {
   "extends": ["../../tsconfig.base.json"],
   "compilerOptions": {
-    "lib": ["ESNext", "DOM"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "baseUrl": ".",
-    "rootDir": "src",
-    "outDir": "dist",
-    "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
+    "rootDir": ".",
+    "outDir": "dist-types",
+    "tsBuildInfoFile": "dist-types/tsconfig.lib.tsbuildinfo",
     "emitDeclarationOnly": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
       "@/*": ["./src/*"]
     },
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "module": "es2022",
+    "moduleResolution": "bundler"
   },
-  "include": ["src", "playground/src"],
+  "include": ["src", "build/entries.ts"],
   "references": [
     {
       "path": "../../packages/analytics/tsconfig.lib.json"
