@@ -10,3 +10,7 @@ declare module '*.vue' {
 }
 
 declare const CLASSIC_VERSION: string;
+declare const EXT_CM: {
+  css: string;
+  script: string;
+}

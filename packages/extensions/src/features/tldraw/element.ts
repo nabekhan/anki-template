@@ -1,4 +1,4 @@
-import { customElementOnce } from '@/utils.js';
+import { customElementOnce } from '@/utils/index.js';
 import { css, html } from 'lit';
 import { unsafeCSS } from 'lit';
 import { LitElement } from 'lit';

@@ -5,13 +5,13 @@ import {
   customElementOnce,
   markInteractive,
   patchConsole,
-  pv,
-} from '../utils.js';
+} from '../utils/index.js';
 import { html } from 'lit/static-html.js';
 
 import { initTldraw, ScreenShotType } from '@/features/tldraw/index.js';
 import { property } from 'lit/decorators.js';
 import { buttonStyle } from '@/style.js';
+import { pv } from '@/utils/event.js';
 
 @customElementOnce('ae-tldraw')
 export class TldrawExt extends LitElement {

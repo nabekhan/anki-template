@@ -5,6 +5,8 @@ description: Anki Tldraw 插件
 
 # Tldraw
 
+<!--@include: @/parts/header.md -->
+
 [Tldraw](https://tldraw.com/) 是一个功能强大的画板工具，本插件实现了其和 Anki 的集成，实现复习时自由的在卡片上绘画
 
 功能：
@@ -13,14 +15,16 @@ description: Anki Tldraw 插件
 - 自动将卡片内容截图至画板内，对于习惯在记忆时绘图、打草稿的用户非常实用
 - 所有 Tldraw 的功能待你探索，包括 Apple Pencil 支持
 
-
 ## 安装
 
 打开 Anki 的卡片模板编辑器，在任何你喜欢的模板的尾部添加以下代码：
 
 ```html
 <ae-tldraw></ae-tldraw>
-<script src="https://cdn.jsdelivr.net/npm/@anki-eco/extensions/dist/tldraw.js" defer></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/@anki-eco/extensions/dist/tldraw.js"
+  defer
+></script>
 ```
 
 在复习时就能看到一个按钮，点击后就能打开画板。该按钮只包括基础样式，你可以按自己的喜好设置它的 css
@@ -50,13 +54,9 @@ description: Anki Tldraw 插件
 上面的 `ae-tldraw` 元素在点击时打开画板，切换到下一张卡片时为你自动关闭画板。如果你希望自己控制何时打开画板，可以直接调用：
 
 ```js
-window.AnkiEcoExtension_tldraw.initTldraw('#qa', 'html2canvas')
+window.AnkiEcoExtension_tldraw.initTldraw('#qa', 'html2canvas');
 ```
 
 > 可以直接删除 `ae-tldraw` 元素，但必须保留 script
 
-## 反馈
-
-如果你有任何问题或建议，请在 [GitHub](https://github.com/ikkz/anki-eco/issues) 上提交
-
-如果你觉得有用，欢迎 star 🌟：[GitHub](https://github.com/ikkz/anki-eco)
+<!--@include: @/parts/feedback-zh.md -->

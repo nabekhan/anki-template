@@ -5,6 +5,8 @@ description: Anki Tldraw Extension
 
 # Tldraw
 
+<!--@include: @/parts/header.md -->
+
 [Tldraw](https://tldraw.com/) is a powerful whiteboard tool. This extension integrates it with Anki, enabling you to draw freely on cards during review.
 
 Features:
@@ -19,7 +21,10 @@ Open Anki’s card template editor and add the following to the end of any templ
 
 ```html
 <ae-tldraw></ae-tldraw>
-<script src="https://cdn.jsdelivr.net/npm/@anki-eco/extensions/dist/tldraw.js" defer></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/@anki-eco/extensions/dist/tldraw.js"
+  defer
+></script>
 ```
 
 During review, you’ll see a button; click it to open the canvas. The button only includes basic styles — feel free to customize its CSS.
@@ -49,13 +54,9 @@ Specifies the screenshot method. Default is `html2canvas`. If you run into layou
 The `ae-tldraw` element opens the canvas on click and automatically closes it when you move to the next card. If you prefer to control when the canvas opens yourself, call:
 
 ```js
-window.AnkiEcoExtension_tldraw.initTldraw('#qa', 'html2canvas')
+window.AnkiEcoExtension_tldraw.initTldraw('#qa', 'html2canvas');
 ```
 
 > You may remove the `ae-tldraw` element entirely, but you must keep the script tag.
 
-## Feedback
-
-If you have any questions or suggestions, please submit them on [GitHub](https://github.com/ikkz/anki-eco/issues).
-
-If you find it helpful, please consider giving it a star 🌟: [GitHub](https://github.com/ikkz/anki-eco)
+<!--@include: @/parts/feedback-en.md -->

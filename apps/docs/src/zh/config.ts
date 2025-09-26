@@ -22,6 +22,14 @@ export default defineAdditionalConfig({
         text: '插件',
         items: [
           {
+            text: '概览',
+            link: '/zh/extension/',
+          },
+          {
+            text: 'CardMotion',
+            link: '/zh/extension/card-motion',
+          },
+          {
             text: 'Tldraw',
             link: '/zh/extension/tldraw',
           },

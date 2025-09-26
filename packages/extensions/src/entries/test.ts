@@ -1,5 +1,5 @@
 import { LitElement } from 'lit';
-import { customElementOnce } from '../utils.js';
+import { customElementOnce } from '../utils/index.js';
 import { html } from 'lit/static-html.js';
 
 @customElementOnce('ae-test')

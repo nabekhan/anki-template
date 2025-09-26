@@ -1,6 +1,10 @@
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
-import { customElementOnce, getAnkiClient, markInteractive } from '../utils.js';
+import {
+  customElementOnce,
+  getAnkiClient,
+  markInteractive,
+} from '../utils/index.js';
 import { twStyle } from '../style.js';
 import { X, BadgeQuestionMark } from 'lucide-static';
 import '@/components/icon-button.js';

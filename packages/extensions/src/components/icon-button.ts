@@ -1,5 +1,5 @@
 import { css, html, LitElement } from 'lit';
-import { customElementOnce } from '@/utils.js';
+import { customElementOnce } from '@/utils/index.js';
 import { twStyle } from '@/style.js';
 import { property } from 'lit/decorators.js';
 import { unsafeSVG } from 'lit/directives/unsafe-svg.js';

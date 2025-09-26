@@ -1,9 +1,10 @@
-import { blobToBase64, pv } from '@/utils.js';
+import { blobToBase64 } from '@/utils/index.js';
 import '@/components/full-screen.js';
 import './element.js';
 import { toBlob } from 'html-to-image';
 import { imageDimensionsFromData } from 'image-dimensions';
 import html2canvas from 'html2canvas';
+import { pv } from '@/utils/event.js';
 
 export type ScreenShotType = 'html2canvas' | 'html-to-image';
 

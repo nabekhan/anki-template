@@ -1,4 +1,6 @@
 import { defineConfig } from 'vitepress';
+import fs from 'node:fs/promises';
+import path from 'node:path/posix';
 
 const {
   default: { version: classicVersion },
@@ -7,6 +9,26 @@ const {
     type: 'json',
   },
 });
+
+const EXT_CM_SCRIPT = await fs.readFile(
+  path.join(
+    import.meta.dirname,
+    '../../../packages/extensions/dist/card-motion.js'
+  ),
+  {
+    encoding: 'utf8',
+  }
+);
+
+const EXT_CM_CSS = await fs.readFile(
+  path.join(
+    import.meta.dirname,
+    '../../../packages/extensions/src/features/card-motion/index.css'
+  ),
+  {
+    encoding: 'utf8',
+  }
+);
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -42,6 +64,14 @@ export default defineConfig({
       {
         text: 'Extension',
         items: [
+          {
+            text: 'Overview',
+            link: '/extension/',
+          },
+          {
+            text: 'CardMotion',
+            link: '/extension/card-motion',
+          },
           {
             text: 'Tldraw',
             link: '/extension/tldraw',
@@ -118,6 +148,7 @@ export default defineConfig({
   vite: {
     define: {
       CLASSIC_VERSION: JSON.stringify(classicVersion.toString()),
+      EXT_CM: { css: EXT_CM_CSS, script: EXT_CM_SCRIPT },
     },
   },
 });

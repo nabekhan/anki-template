@@ -138,6 +138,9 @@ importers:
       '@anki-eco/classic-templates':
         specifier: workspace:*
         version: link:../../templates/classic
+      '@anki-eco/extensions':
+        specifier: workspace:*
+        version: link:../../packages/extensions
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.21(postcss@8.5.6)
@@ -175,6 +178,9 @@ importers:
       '@anki-eco/analytics':
         specifier: workspace:*
         version: link:../analytics
+      '@anki-eco/shared':
+        specifier: workspace:*
+        version: link:../shared
       html-to-image:
         specifier: ^1.11.13
         version: 1.11.13

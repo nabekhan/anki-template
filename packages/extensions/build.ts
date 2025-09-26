@@ -16,6 +16,9 @@ for (const entry of entries) {
     configFile: false,
     root: __dirname,
     ...commonConfig,
+    esbuild: {
+      legalComments: 'none'
+    },
     build: {
       outDir: './dist',
       emptyOutDir: false,

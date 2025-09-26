@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: Extensions
-      link: /extension/tldraw
+      link: /extension/
     - theme: alt
       text: Templates
       link: /templates/classic/
@@ -17,6 +17,9 @@ features:
   - title: Tldraw Integration
     details: Draw freely on cards during review; integrates with any template you use
     link: /extension/tldraw
+  - title: CardMotion
+    details: Realistic flip and next-card animations; works across all Anki clients
+    link: /extension/card-motion
   - title: Classic Templates
     details: Interactive templates (MCQ, TF, Basic, Match, Cloze, Input) with preview & download
     link: /templates/classic/
