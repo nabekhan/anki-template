@@ -4,5 +4,15 @@
   "private": true,
   "devDependencies": {
     "@anki-eco/classic-templates": "workspace:*"
+  },
+  "nx": {
+    "targets": {
+      "build": {
+        "dependsOn": [
+          "^build",
+          "^package"
+        ]
+      }
+    }
   }
 }
