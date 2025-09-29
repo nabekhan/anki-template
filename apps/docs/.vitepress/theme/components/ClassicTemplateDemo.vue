@@ -29,8 +29,12 @@ const selectedLocale = ref<Locale>(
 );
 const selectedField = ref<Field>('native');
 
-const distPublicBase = '/classic/dist';
-const releasePublicBase = '/classic/release';
+const distHost = import.meta.env.DEV
+  ? 'http://localhost:4200'
+  : 'https://classic-dist.ikkz.fun';
+
+const distPublicBase = `${distHost}/dist`;
+const releasePublicBase = `${distHost}/release`;
 
 const variantKey = computed(
   () => `${props.entry}.${selectedLocale.value}.${selectedField.value}`

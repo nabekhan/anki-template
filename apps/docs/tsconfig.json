@@ -7,9 +7,6 @@
       "path": "../../packages/extensions"
     },
     {
-      "path": "../../templates/classic"
-    },
-    {
       "path": "./tsconfig.app.json"
     }
   ]

@@ -4,6 +4,9 @@
   "include": [],
   "references": [
     {
+      "path": "../../templates/classic"
+    },
+    {
       "path": "./tsconfig.app.json"
     }
   ]

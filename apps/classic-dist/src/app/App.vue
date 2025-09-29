@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import NxWelcome from './NxWelcome.vue';
-</script>
+<script setup lang="ts"></script>
 
-<template>
-  <NxWelcome title="@anki-eco/classic-dist" />
-</template>
+<template>Hello world</template>

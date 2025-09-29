@@ -7,7 +7,6 @@
     "postcss": "^8.5.1",
     "tailwindcss": "3",
     "vitepress": "2.0.0-alpha.12",
-    "@anki-eco/classic-templates": "workspace:*",
     "@anki-eco/extensions": "workspace:*"
   },
   "scripts": {
