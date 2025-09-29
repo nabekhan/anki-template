@@ -40,7 +40,7 @@
   padding: 16px;
   position: absolute;
   inset: 0;
-  overflow: hidden;
+  overflow: auto;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   border-radius: var(--ae-card-border-radius);
