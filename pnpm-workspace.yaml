@@ -2,6 +2,7 @@ packages:
   - 'packages/*'
   - 'templates/*'
   - 'apps/docs'
+  - 'apps/classic-dist'
 autoInstallPeers: true
 strictPeerDependencies: false
 onlyBuiltDependencies:

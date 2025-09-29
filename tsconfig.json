@@ -35,6 +35,9 @@
     },
     {
       "path": "./templates/classic"
+    },
+    {
+      "path": "./apps/classic-dist"
     }
   ]
 }
