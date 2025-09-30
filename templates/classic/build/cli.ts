@@ -60,7 +60,7 @@ if (!args.dev) {
     output: outputOptions,
     watch: {
       buildDelay: 1000,
-      exclude: ['node_modules/**', 'dist/**'],
+      exclude: ['node_modules/**', 'output/**'],
     },
   });
   watcher.on('event', (event) => {

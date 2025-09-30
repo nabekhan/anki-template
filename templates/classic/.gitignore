@@ -13,6 +13,7 @@ release
 dist-ssr
 *.local
 dist-types
+output
 
 # Editor directories and files
 .vscode/*

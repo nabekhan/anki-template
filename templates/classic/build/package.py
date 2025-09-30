@@ -6,8 +6,8 @@ import os
 
 build_dir = path.dirname(__file__)
 
-release_dir = path.abspath(path.join(build_dir, "../release"))
-dist_dir = path.abspath(path.join(build_dir, "../dist"))
+release_dir = path.abspath(path.join(build_dir, "../output/release"))
+dist_dir = path.abspath(path.join(build_dir, "../output/dist"))
 
 if path.exists(release_dir):
     shutil.rmtree(release_dir)

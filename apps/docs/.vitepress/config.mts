@@ -35,10 +35,12 @@ const EXT_CM_CSS = await fs.readFile(
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   srcDir: 'src',
-
   title: 'Anki Eco',
   description: 'Enhance your Anki experience',
   lastUpdated: true,
+  sitemap: {
+    hostname: 'https://anki.ikkz.fun',
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

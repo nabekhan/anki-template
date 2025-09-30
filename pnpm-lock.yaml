@@ -133,12 +133,6 @@ importers:
         specifier: ^3.107.3
         version: 3.114.14
 
-  apps/classic-dist:
-    devDependencies:
-      '@anki-eco/classic-templates':
-        specifier: workspace:*
-        version: link:../../templates/classic
-
   apps/docs:
     devDependencies:
       '@anki-eco/extensions':

@@ -30,11 +30,11 @@ jobs:
           cache: 'pnpm'
 
       - run: pnpm install --frozen-lockfile
-      - run: pnpm exec nx build classic-dist
+      - run: pnpm exec nx package classic-templates
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy apps/classic-dist/dist --project-name=classic-dist
+          command: pages deploy templates/classic/output --project-name=classic-dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
