@@ -2,16 +2,6 @@ import { defineConfig } from 'vitepress';
 import fs from 'node:fs/promises';
 import path from 'node:path/posix';
 
-const CLASSIC_VERSION = await fs
-  .readFile(
-    path.join(import.meta.dirname, '../../../templates/classic/package.json'),
-    {
-      encoding: 'utf8',
-    }
-  )
-  .then(JSON.parse)
-  .then((value) => value.version);
-
 const EXT_CM_SCRIPT = await fs.readFile(
   path.join(
     import.meta.dirname,
@@ -151,7 +141,6 @@ export default defineConfig({
 
   vite: {
     define: {
-      CLASSIC_VERSION: JSON.stringify(CLASSIC_VERSION.toString()),
       EXT_CM: { css: EXT_CM_CSS, script: EXT_CM_SCRIPT },
     },
   },

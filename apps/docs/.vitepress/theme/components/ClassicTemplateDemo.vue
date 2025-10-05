@@ -31,7 +31,7 @@ const selectedField = ref<Field>('native');
 
 const distHost = import.meta.env.DEV
   ? 'http://localhost:4200'
-  : 'https://classic-dist.ikkz.fun';
+  : 'https://classic.anki.ikkz.fun';
 
 const distPublicBase = `${distHost}/dist`;
 const releasePublicBase = `${distHost}/release`;
@@ -45,6 +45,8 @@ const downloadPath = computed(
 );
 
 const downloadName = computed(() => `${variantKey.value}.apkg`);
+
+const version = ref<string>('...');
 
 // Simple i18n-ish labels
 const labels = {
@@ -79,6 +81,33 @@ async function fetchJson<T>(url: string): Promise<T> {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Failed to load ${url}`);
   return (await res.json()) as T;
+}
+
+async function fetchClassicVersion() {
+  try {
+    const res = await fetch(`${distHost}/package.json`, {
+      cache: 'no-cache',
+    });
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch version (${res.status})`);
+    }
+
+    const body = (await res.json()) as unknown;
+    if (!body || typeof body !== 'object') {
+      throw new Error('Invalid version payload');
+    }
+
+    const value = (body as { version?: unknown }).version;
+    if (typeof value !== 'string') {
+      throw new Error('Missing version field');
+    }
+
+    version.value = value;
+  } catch (error) {
+    console.error(error);
+    version.value = 'unknown';
+  }
 }
 
 type BuildJson = {
@@ -164,9 +193,8 @@ watch([variantKey], () => {
 
 onMounted(() => {
   loadAndRender();
+  fetchClassicVersion();
 });
-
-const version = CLASSIC_VERSION;
 </script>
 
 <template>
@@ -175,10 +203,12 @@ const version = CLASSIC_VERSION;
     <div class="tw-flex tw-items-center tw-gap-3 tw-text-sm tw-text-gray-700">
       <div class="tw-relative">
         <select
-          class="tw-appearance-none tw-bg-transparent tw-pr-5 tw-pl-0 tw-py-1 tw-border-0 tw-cursor-pointer hover:tw-underline focus:tw-outline-none"
           v-model="selectedLocale"
+          class="tw-appearance-none tw-bg-transparent tw-pr-5 tw-pl-0 tw-py-1 tw-border-0 tw-cursor-pointer hover:tw-underline focus:tw-outline-none"
         >
-          <option v-for="l in locales" :key="l" :value="l">{{ l }}</option>
+          <option v-for="l in locales" :key="l" :value="l">
+            {{ l }}
+          </option>
         </select>
         <svg
           class="tw-pointer-events-none tw-absolute tw-right-0 tw-top-1/2 -tw-translate-y-1/2 tw-w-4 tw-h-4 tw-text-gray-400"
@@ -198,10 +228,12 @@ const version = CLASSIC_VERSION;
 
       <div class="tw-relative">
         <select
-          class="tw-appearance-none tw-bg-transparent tw-pr-5 tw-pl-0 tw-py-1 tw-border-0 tw-cursor-pointer hover:tw-underline focus:tw-outline-none"
           v-model="selectedField"
+          class="tw-appearance-none tw-bg-transparent tw-pr-5 tw-pl-0 tw-py-1 tw-border-0 tw-cursor-pointer hover:tw-underline focus:tw-outline-none"
         >
-          <option v-for="f in fields" :key="f" :value="f">{{ f }}</option>
+          <option v-for="f in fields" :key="f" :value="f">
+            {{ f }}
+          </option>
         </select>
         <svg
           class="tw-pointer-events-none tw-absolute tw-right-0 tw-top-1/2 -tw-translate-y-1/2 tw-w-4 tw-h-4 tw-text-gray-400"
@@ -243,8 +275,8 @@ const version = CLASSIC_VERSION;
         class="tw-border tw-rounded tw-overflow-hidden tw-bg-white tw-h-[680px] tw-shadow-sm"
       >
         <iframe
-          class="tw-w-full tw-h-full"
           ref="iframeRef"
+          class="tw-w-full tw-h-full"
           :srcdoc="hostHtml"
         />
       </div>

@@ -3,6 +3,15 @@
   "targets": {
     "package": {
       "cache": true
+    },
+    "output": {
+      "cache": true,
+      "dependsOn": ["package"],
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["cp package.json output/package.json"],
+        "cwd": "{projectRoot}"
+      }
     }
   }
 }

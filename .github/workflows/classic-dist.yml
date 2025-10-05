@@ -30,7 +30,7 @@ jobs:
           cache: 'pnpm'
 
       - run: pnpm install --frozen-lockfile
-      - run: pnpm exec nx package classic-templates
+      - run: pnpm exec nx output classic-templates
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
