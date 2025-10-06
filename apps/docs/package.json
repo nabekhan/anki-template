@@ -1,6 +1,7 @@
 {
   "name": "@anki-eco/docs",
   "version": "0.0.1",
+  "license": "GPL-3.0-or-later",
   "private": true,
   "devDependencies": {
     "autoprefixer": "^10.4.20",

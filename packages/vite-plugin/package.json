@@ -9,6 +9,7 @@
     "url": "https://github.com/ikkz/anki-eco/issues"
   },
   "version": "1.1.5",
+  "license": "GPL-3.0-or-later",
   "type": "module",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",

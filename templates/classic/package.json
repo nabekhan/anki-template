@@ -12,7 +12,7 @@
     "test": "nx vite:test -- run"
   },
   "author": "",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "devDependencies": {
     "@changesets/changelog-git": "^0.2.0",
     "@changesets/cli": "^2.27.10",
