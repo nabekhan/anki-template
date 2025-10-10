@@ -5,8 +5,6 @@ description: Cross‑platform Anki extensions based on templates, not addons
 
 # Extensions
 
-<!--@include: @/parts/header.md -->
-
 Extensions here are built on Anki card templates (not desktop addons), so they can run across platforms: Anki Desktop, AnkiMobile, AnkiDroid, and even AnkiWeb when applicable. By relying on HTML/CSS/JS inside templates, we aim for maximum portability with minimal setup.
 
 ## Available Extensions

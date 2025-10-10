@@ -5,8 +5,6 @@ description: 基于模板而非插件（addon）的跨平台 Anki 扩展
 
 # 插件
 
-<!--@include: @/parts/header.md -->
-
 这里的插件基于 Anki 卡片模板（而不是桌面端的插件 addon）实现，因此可以尽可能覆盖多个平台：Anki Desktop、AnkiMobile、AnkiDroid，甚至在合适的场景下也可用于 AnkiWeb。通过在模板中使用 HTML/CSS/JS 的方式，我们力求以最小的配置获得最大的可移植性。
 
 ## 当前可用的插件

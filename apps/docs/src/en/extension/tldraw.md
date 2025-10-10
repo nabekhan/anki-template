@@ -5,8 +5,6 @@ description: Anki Tldraw Extension
 
 # Tldraw
 
-<!--@include: @/parts/header.md -->
-
 [Tldraw](https://tldraw.com/) is a powerful whiteboard tool. This extension integrates it with Anki, enabling you to draw freely on cards during review.
 
 Features:

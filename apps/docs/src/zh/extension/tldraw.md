@@ -5,8 +5,6 @@ description: Anki Tldraw 插件
 
 # Tldraw
 
-<!--@include: @/parts/header.md -->
-
 [Tldraw](https://tldraw.com/) 是一个功能强大的画板工具，本插件实现了其和 Anki 的集成，实现复习时自由的在卡片上绘画
 
 功能：

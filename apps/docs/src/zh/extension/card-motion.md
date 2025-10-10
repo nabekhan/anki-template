@@ -5,8 +5,6 @@ description: 给你真实卡片的动画
 
 # CardMotion
 
-<!--@include: @/parts/header.md -->
-
 功能：
 
 - 在翻转与切换到下一张卡片时，展示真实、流畅的动画

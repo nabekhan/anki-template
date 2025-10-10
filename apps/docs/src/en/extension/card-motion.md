@@ -5,8 +5,6 @@ description: Realistic animations for your cards
 
 # CardMotion
 
-<!--@include: @/parts/header.md -->
-
 Features:
 
 - Shows realistic, smooth animations when flipping and moving to the next card
