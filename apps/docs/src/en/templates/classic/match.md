@@ -40,3 +40,5 @@ Reptiles::Cobra,,Crocodile
 > If you download the Markdown template, please see docs: [Markdown support](/templates/classic/#markdown-support)
 
 <ClassicTemplateDemo entry="match" />
+
+<!--@include: @/parts/feedback-en.md -->

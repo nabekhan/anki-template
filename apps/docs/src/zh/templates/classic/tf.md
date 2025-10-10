@@ -25,3 +25,5 @@ title: 正误题
 > 如果你下载 Markdown 模板，请查看文档：[Markdown 支持](/zh/templates/classic/#markdown-support)
 
 <ClassicTemplateDemo entry="tf" />
+
+<!--@include: @/parts/feedback-zh.md -->

@@ -33,3 +33,5 @@ All fields are consistent with the basic template.
 > If you download the Markdown template, please see docs: [Markdown support](/templates/classic/#markdown-support)
 
 <ClassicTemplateDemo entry="cloze" />
+
+<!--@include: @/parts/feedback-en.md -->

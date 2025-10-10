@@ -23,3 +23,5 @@ A Simple Q&A Template
 > If you download the Markdown template, please see docs: [Markdown support](/templates/classic/#markdown-support)
 
 <ClassicTemplateDemo entry="basic" />
+
+<!--@include: @/parts/feedback-en.md -->

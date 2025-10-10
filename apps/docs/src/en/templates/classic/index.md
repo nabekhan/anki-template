@@ -133,3 +133,5 @@ mindmap
       Mermaid
 ```
 ````
+
+<!--@include: @/parts/feedback-en.md -->

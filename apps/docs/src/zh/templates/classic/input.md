@@ -23,3 +23,5 @@ AnkiDroid 用户需在高级设置中开启 “Type answer into the card”。
 > 如果你下载 Markdown 模板，请查看文档：[Markdown 支持](/zh/templates/classic/#markdown-support)
 
 <ClassicTemplateDemo entry="input" />
+
+<!--@include: @/parts/feedback-zh.md -->

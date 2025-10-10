@@ -33,3 +33,5 @@ Anki 的 cloze 字段格式为 <span v-pre>`{{c1::text}}`</span>，可以使用�
 > 如果你下载 Markdown 模板，请查看文档：[Markdown 支持](/zh/templates/classic/#markdown-support)
 
 <ClassicTemplateDemo entry="cloze" />
+
+<!--@include: @/parts/feedback-zh.md -->

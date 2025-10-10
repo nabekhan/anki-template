@@ -27,3 +27,5 @@ Note: When all options are empty, the template will behave as a basic Q&A templa
 > If you download the Markdown template, please see docs: [Markdown support](/templates/classic/#markdown-support)
 
 <ClassicTemplateDemo entry="mcq_10" />
+
+<!--@include: @/parts/feedback-en.md -->
